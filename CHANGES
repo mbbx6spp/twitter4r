@@ -1,5 +1,8 @@
 = Changes
 
-== 2007-05-05
- * Initial revision of codebase commited; includes:
-   * 
+== 2007-05-06
+* Initial revision of codebase commited; includes:
+  - 80% Twitter API feature-completeness
+  - 100% RSpec C0 code coverage
+  - Rake tasks for: RSpec, RCov, RDoc, Gem, Rubyforge Publishing, etc.
+

@@ -1,0 +1,16 @@
+spec:
+  name: twitter4r
+  version: <%= Twitter::Version.to_version %>
+  summary: A clean Twitter client API in pure Ruby (not command-line client). Will include Twitter add-ons also in Ruby.
+  require_path: lib
+  has_rdoc: true
+  autorequire: twitter
+  bindir: bin
+  executables: 
+  author: Susan Potter
+  email: twitter4r-devel@rubyforge.org
+  homepage: http://twitter4r.rubyforge.org
+  rubyforge_project: twitter4r
+  files: <% (self.project_files + self.spec_files).each do |file| %>
+  - <%= file %>
+<% end %>

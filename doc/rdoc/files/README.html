@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>File: README</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+
+    <script language="JavaScript" type="text/javascript">
+    // <![CDATA[
+
+        function toggleSource( id )
+        {
+          var elem
+          var link
+
+          if( document.getElementById )
+          {
+            elem = document.getElementById( id )
+            link = document.getElementById( "l_" + id )
+          }
+          else if ( document.all )
+          {
+            elem = eval( "document.all." + id )
+            link = eval( "document.all.l_" + id )
+          }
+          else
+            return false;
+
+          if( elem.style.display == "block" )
+          {
+            elem.style.display = "none"
+            link.innerHTML = "show source"
+          }
+          else
+          {
+            elem.style.display = "block"
+            link.innerHTML = "hide source"
+          }
+        }
+
+        function openCode( url )
+        {
+          window.open( url, "SOURCE_CODE", "width=400,height=400,scrollbars=yes" )
+        }
+      // ]]>
+    </script>
+  </head>
+
+  <body>
+  <table border='0' cellpadding='0' cellspacing='0' width="100%" class='banner'>
+  <tr><td>
+    <table width="100%" border='0' cellpadding='0' cellspacing='0'><tr>
+      <td class="file-title" colspan="2"><span class="file-title-prefix">File</span><br />README</td>
+      <td align="right">
+        <table border='0' cellspacing="0" cellpadding="2">
+          <tr>
+            <td>Path:</td>
+            <td>README
+            </td>
+          </tr>
+          <tr>
+            <td>Modified:</td>
+            <td>Sat May 05 23:03:22 -0500 2007</td>
+          </tr>
+        </table>
+      </td></tr>
+    </table>
+  </td></tr>
+</table><br>
+ <!-- banner header -->
+
+  <div id="bodyContent">
+      <div id="content">
+
+  <div class="description"><h1>Twitter4R</h1>
+<p>
+Developer: Susan Potter (<a
+href="http://SusanPotter.NET">SusanPotter.NET</a>)
+</p>
+<p>
+Twitter4R provides an object based API to query or update your <a
+href="../classes/Twitter.html">Twitter</a> account via pure Ruby. It hides
+the ugly HTTP/REST code from your code.
+</p>
+<h2>External Dependencies</h2>
+<ul>
+<li>Ruby 1.8 (tested with 1.8.4+)
+
+</li>
+<li>RSpec gem 0.8.2
+
+</li>
+<li>JSON gem 0.4.3
+
+</li>
+<li>jcode (for unicode support)
+
+</li>
+</ul>
+<h2>Query Public Timeline</h2>
+<pre>
+  require 'twitter'
+
+  client = Twitter::Client.new(:login =&gt; 'mylogin', :password =&gt; 'mypassword')
+  statuses = client.public_timeline
+  # statuses is an array of Twitter::Status objects
+  # you can query Status objects like so...
+  statuses.each do |stat|
+    puts stat.user.login, stat.message
+    puts
+  end
+</pre>
+<h2>Query Friend Timeline</h2>
+<pre>
+  require 'twitter'
+
+  client = Twitter::Client.new(:login =&gt; 'mylogin', :password =&gt; 'mypassword')
+  statuses = client.friend_timeline
+  # statuses is an array of Twitter::Status objects
+  # you can query Status objects like so...
+  statuses.each do |stat|
+    puts stat.user.login, stat.message
+    puts
+  end
+</pre>
+<h2>Query Friend Current Statuses</h2>
+<pre>
+  require 'twitter'
+
+  client = Twitter::Client.new(:login =&gt; 'mylogin', :password =&gt; 'mypassword')
+  statuses = client.friend_statuses
+  # statuses is an array of Twitter::Status objects
+  # you can query Status objects like so...
+  statuses.each do |stat|
+    puts stat.user.login, stat.message
+    puts
+  end
+</pre>
+<h2>Query Follower Current Statuses</h2>
+<pre>
+  require 'twitter'
+
+  client = Twitter::Client.new(:login =&gt; 'mylogin', :password =&gt; 'mypassword')
+  statuses = client.follower_statuses
+  # statuses is an array of Twitter::Status objects
+  # you can query Status objects like so...
+  statuses.each do |stat|
+    puts stat.user.login, stat.message
+    puts
+  end
+</pre>
+<h2>Update Your Status</h2>
+<pre>
+  require 'twitter'
+
+  client = Twitter::Client.new(:login =&gt; 'mylogin', :password =&gt; 'mypassword')
+  begin
+    client.update_status('Twitter4R is so cool')
+  rescue RESTError, re
+    puts re
+  end
+</pre>
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+
+  </div>
+
+    </body>
+</html>

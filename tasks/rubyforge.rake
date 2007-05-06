@@ -1,16 +1,18 @@
 require('rake/contrib/rubyforgepublisher')
 
-publisher = Rake::CompositePublisher.new
-publisher.add(Rake::RubyForgePublisher.new('twitter4r', 'mbbx6spp'))
-publisher.add(Rake::SshDirPublisher.new("mbbx6spp@rubyforge.org", 
-                                        "/var/www/gforge-projects/twitter4r", 
-                                        "doc").upload)
-
-
-task :publish_doc do
-  publish.upload
+def rf_publisher
+  rf_user = ENV['RUBYFORGE_USER']
+  publisher = Rake::CompositePublisher.new
+  publisher.add(Rake::RubyForgePublisher.new('twitter4r', rf_user))
+  publisher.add(Rake::SshDirPublisher.new("#{rf_user}@rubyforge.org", 
+                                          "/var/www/gforge-projects/twitter4r", 
+                                          "doc").upload)
+  publisher
 end
 
-#task :verify_user do
-#  raise "RUBYFORGE_USER environment variable not set!" unless ENV['RUBYFORGE_USER']
-#end
+namespace :publish do
+  task :web do
+    rf_publisher.upload
+  end
+end
+

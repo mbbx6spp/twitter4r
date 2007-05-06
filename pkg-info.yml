@@ -12,5 +12,5 @@ spec:
   homepage: http://twitter4r.rubyforge.org
   rubyforge_project: twitter4r
   files: <% (self.project_files + self.spec_files).each do |file| %>
-  - <%= file %>
+  - <%= Pathname.new(file).relative_path_from(Pathname.new(root_dir)) %>
 <% end %>

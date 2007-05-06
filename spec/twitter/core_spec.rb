@@ -82,8 +82,8 @@ context "Twitter::Client#timeline(:public)" do
     @host = Twitter::Client.class_eval("@@HOST")
     @port = Twitter::Client.class_eval("@@PORT")
 
-    @request = mas_net_http_get
-    @response = mas_net_http_response
+    @request = mas_net_http_get(:basic_auth => nil)
+    @response = mas_net_http_response(:success, '[]')
     
     @http = mas_net_http(@response)
     @client = Twitter::Client.from_config 'config/twitter.yml'

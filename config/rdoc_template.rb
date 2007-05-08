@@ -202,7 +202,6 @@ CSS
     <title>%title%</title>
     <meta http-equiv="Content-Type" content="text/html; charset=%charset%" />
     <link rel="stylesheet" href="%style_url%" type="text/css" media="screen" />
-
     <script language="JavaScript" type="text/javascript">
     // <![CDATA[
 
@@ -462,6 +461,12 @@ END:sections
 HTML
 
     FOOTER = <<ENDFOOTER
+    <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+_uacct = "UA-837842-4";
+urchinTracker();
+    </script>
   </body>
 </html>
 ENDFOOTER

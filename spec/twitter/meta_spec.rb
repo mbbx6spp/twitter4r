@@ -21,9 +21,9 @@ module ERBMetaMixin
   end
 end
 
-context "Twitter::Meta cache policy" do
+describe "Twitter::Meta cache policy" do
   include ERBMetaMixin
-  setup do
+  before(:each) do
     @root_dir = project_root_dir
     @meta = Twitter::Meta.new(@root_dir)
     @expected_pkg_info = load_erb_yaml(File.join(@root_dir, 'pkg-info.yml'), binding)
@@ -31,15 +31,15 @@ context "Twitter::Meta cache policy" do
     @expected_spec_files = spec_files
   end
   
-  specify "should store value returned from pkg_info in @pkg_info after first YAML load" do
+  it "should store value returned from pkg_info in @pkg_info after first YAML load" do
     @meta.instance_eval("@pkg_info").should.eql?(nil)
     @meta.pkg_info
-    @meta.instance_eval("@pkg_info").should_eql?(@expected_pkg_info)
+    @meta.instance_eval("@pkg_info").should eql?(@expected_pkg_info)
     @meta.pkg_info
-    @meta.instance_eval("@pkg_info").should_eql?(@expected_pkg_info)
+    @meta.instance_eval("@pkg_info").should eql?(@expected_pkg_info)
   end
   
-  specify "should store value returned from project_files in @project_files after first glob" do
+  it "should store value returned from project_files in @project_files after first glob" do
     @meta.instance_eval("@project_files").should.eql?(nil)
     @meta.project_files
     @meta.instance_eval("@project_files").should.eql?(@expected_project_files)
@@ -47,7 +47,7 @@ context "Twitter::Meta cache policy" do
     @meta.instance_eval("@project_files").should.eql?(@expected_project_files)
   end
   
-  specify "should store value returned from spec_files in @spec_files after first glob" do
+  it "should store value returned from spec_files in @spec_files after first glob" do
     @meta.instance_eval("@spec_files").should.eql?(nil)
     @meta.spec_files
     @meta.instance_eval("@spec_files").should.eql?(@expected_spec_files)
@@ -56,9 +56,9 @@ context "Twitter::Meta cache policy" do
   end
 end
 
-context "Twitter::Meta" do
+describe "Twitter::Meta" do
   include ERBMetaMixin
-  setup do
+  before(:each) do
     @root_dir = project_root_dir
     @meta = Twitter::Meta.new(@root_dir)
     @expected_yaml_hash = load_erb_yaml(File.join(@root_dir, 'pkg-info.yml'), binding)
@@ -66,27 +66,27 @@ context "Twitter::Meta" do
     @expected_spec_files = spec_files
   end
   
-  specify "should load and return YAML file into Hash object upon #pkg_info call" do
+  it "should load and return YAML file into Hash object upon #pkg_info call" do
     yaml_hash = @meta.pkg_info
     yaml_hash.should.eql? @expected_yaml_hash
   end
   
-  specify "should return the embedded hash responding to key 'spec' of #pkg_info call upon #spec_info call" do
+  it "should return the embedded hash responding to key 'spec' of #pkg_info call upon #spec_info call" do
     yaml_hash = @meta.spec_info
     yaml_hash.should.eql? @expected_yaml_hash['spec']
   end
   
-  specify "should return list of files matching ROOT_DIR/lib/**/*.rb upon #project_files call" do
+  it "should return list of files matching ROOT_DIR/lib/**/*.rb upon #project_files call" do
     project_files = @meta.project_files
     project_files.should.eql? @expected_project_files
   end
   
-  specify "should return list of files matching ROOT_DIR/spec/**/*.rb upon #spec_files call" do
+  it "should return list of files matching ROOT_DIR/spec/**/*.rb upon #spec_files call" do
     spec_files = @meta.spec_files
     spec_files.should.eql? @expected_spec_files    
   end
   
-  specify "should return Gem specification based on YAML file contents and #project_files and #spec_files return values" do
+  it "should return Gem specification based on YAML file contents and #project_files and #spec_files return values" do
     spec = @meta.gem_spec
     expected_spec_hash = @expected_yaml_hash['spec']
     expected_spec_hash.each do |key, val|

@@ -17,6 +17,7 @@ module Twitter
         params.each do |key,val|
           self.send("#{key}=", val) if self.respond_to? key
         end
+        self.send(:init) if self.respond_to? :init
       end
     end
   end # ClassUtilMixin
@@ -49,12 +50,18 @@ module Twitter
   class Status
     include ClassUtilMixin
     attr_accessor :id, :text, :created_at, :user
-
+    
     def eql?(obj)
       [:id, :text, :created_at, :user].each do |att|
         return false unless self.send(att).eql?(obj.send(att))
-      end or true
+      end
     end
+    
+    protected
+      # Constructor callback
+      def init
+        @created_at = Time.parse(@created_at) if @created_at.is_a?(String)
+      end    
   end # Status
 
   # Used to query or post to the Twitter REST API to simplify code.

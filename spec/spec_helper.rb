@@ -3,6 +3,43 @@ require 'twitter'
 
 # Add helper methods here if relevant to multiple _spec.rb files
 
+# Spec helper that sets attribute <tt>att</tt> for given objects <tt>obj</tt> 
+# and <tt>other</tt> to given <tt>value</tt>.
+def equalizer(obj, other, att, value)
+  setter = "#{att}="
+  obj.send(setter, value)
+  other.send(setter, value)
+end
+
+# Spec helper that nil-izes objects passed in
+def nilize(*objects)
+  objects.each {|obj| obj = nil }
+end
+
+# Spec helper that returns a mocked <tt>Twitter::Config</tt> object
+# with stubbed attributes and <tt>attrs</tt> for overriding attribute 
+# values.
+def stubbed_twitter_config(config, attrs = {})
+  opts = { 
+    :protocol => :ssl,
+    :host => 'twitter.com',
+    :port => 443,
+    :proxy_host => 'proxy.host',
+    :proxy_port => 8080,
+  }.merge(attrs)
+  config.stub!(:protocol).and_return(opts[:protocol])
+  config.stub!(:host).and_return(opts[:host])
+  config.stub!(:port).and_return(opts[:port])
+  config.stub!(:proxy_host).and_return(opts[:proxy_host])
+  config.stub!(:proxy_port).and_return(opts[:proxy_port])
+  config
+end
+
+def mas_twitter_config(attrs = {})
+  config = mock(Twitter::Config)
+  stubbed_twitter_conf(config, attrs)
+end
+
 # Spec helper that returns the project root directory as absolute path string
 def project_root_dir
   File.expand_path(File.join(File.dirname(__FILE__), '..'))
@@ -27,6 +64,7 @@ def mas_net_http(response)
   Net::HTTP.stub!(:new).and_return(http)
   http.stub!(:request).and_return(response)
   http.stub!(:start).and_yield(http)
+  http.stub!(:use_ssl=)
   http
 end
 

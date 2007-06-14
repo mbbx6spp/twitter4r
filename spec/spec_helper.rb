@@ -65,6 +65,7 @@ def mas_net_http(response)
   http.stub!(:request).and_return(response)
   http.stub!(:start).and_yield(http)
   http.stub!(:use_ssl=)
+  http.stub!(:verify_mode=)
   http
 end
 

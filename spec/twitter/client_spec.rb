@@ -104,6 +104,7 @@ describe "Twitter::Client#timeline_request upon 200 HTTP response" do
     
     @http = mas_net_http(@response)
     @client = Twitter::Client.from_config 'config/twitter.yml'
+    @header = @client.send(:http_header)
     @uris = Twitter::Client.class_eval("@@URIS")
     
     JSON.stub!(:parse).and_return({})
@@ -111,7 +112,7 @@ describe "Twitter::Client#timeline_request upon 200 HTTP response" do
   
   it "should make GET HTTP request to appropriate URL" do
     @uris.keys.each do |type|
-      Net::HTTP::Get.should_receive(:new).with(@uris[type]).and_return(@request)
+      Net::HTTP::Get.should_receive(:new).with(@uris[type], @header).and_return(@request)
       @client.send(:timeline_request, type, @http)
     end
   end
@@ -124,15 +125,16 @@ describe "Twitter::Client#timeline_request upon 403 HTTP response" do
     
     @http = mas_net_http(@response)
     @client = Twitter::Client.from_config 'config/twitter.yml'
+    @header = @client.send(:http_header)
     @uris = Twitter::Client.class_eval("@@URIS")
   end
   
   it "should make GET HTTP request to appropriate URL" do
     @uris.keys.each do |type|
-      lambda do
-        Net::HTTP::Get.should_receive(:new).with(@uris[type]).and_return(@request)
+      lambda {
+        Net::HTTP::Get.should_receive(:new).with(@uris[type], @header).and_return(@request)
         @client.send(:timeline_request, type, @http)
-      end.should raise_error(Twitter::RESTError)
+      }.should raise_error(Twitter::RESTError)
     end
   end
 end
@@ -144,13 +146,14 @@ describe "Twitter::Client#timeline_request upon 500 HTTP response" do
     
     @http = mas_net_http(@response)
     @client = Twitter::Client.from_config 'config/twitter.yml'
+    @header = @client.send(:http_header)
     @uris = Twitter::Client.class_eval("@@URIS")
   end
   
   it "should make GET HTTP request to appropriate URL" do
     @uris.keys.each do |type|
       lambda do
-        Net::HTTP::Get.should_receive(:new).with(@uris[type]).and_return(@request)
+        Net::HTTP::Get.should_receive(:new).with(@uris[type], @header).and_return(@request)
         @client.send(:timeline_request, type, @http)
       end.should raise_error(Twitter::RESTError)
     end
@@ -164,15 +167,16 @@ describe "Twitter::Client#timeline_request upon 404 HTTP response" do
     
     @http = mas_net_http(@response)
     @client = Twitter::Client.from_config 'config/twitter.yml'
+    @header = @client.send(:http_header)
     @uris = Twitter::Client.class_eval("@@URIS")
   end
   
   it "should make GET HTTP request to appropriate URL" do
     @uris.keys.each do |type|
-      lambda do
-        Net::HTTP::Get.should_receive(:new).with(@uris[type]).and_return(@request)
+      lambda {
+        Net::HTTP::Get.should_receive(:new).with(@uris[type], @header).and_return(@request)
         @client.send(:timeline_request, type, @http)
-      end.should raise_error(Twitter::RESTError)
+      }.should raise_error(Twitter::RESTError)
     end
   end
 end
@@ -184,13 +188,14 @@ describe "Twitter::Client#update(msg) upon 200 HTTP response" do
     
     @http = mas_net_http(@response)
     @client = Twitter::Client.from_config 'config/twitter.yml'
+    @header = @client.send(:http_header)
     @expected_uri = Twitter::Client.class_eval("@@URIS[:update]")
     
     @message = "We love Jodhi May!"
   end
   
   it "should make POST HTTP request to appropriate URL" do
-    Net::HTTP::Post.should_receive(:new).with(@expected_uri).and_return(@request)
+    Net::HTTP::Post.should_receive(:new).with(@expected_uri, @header).and_return(@request)
     @client.update(@message)
   end
 end
@@ -202,6 +207,7 @@ describe "Twitter::Client#update(msg) upon 500 HTTP response" do
     
     @http = mas_net_http(@response)
     @client = Twitter::Client.from_config 'config/twitter.yml'
+    @header = @client.send(:http_header)
     @expected_uri = Twitter::Client.class_eval("@@URIS[:update]")
     
     @message = "We love Jodhi May!"
@@ -209,7 +215,7 @@ describe "Twitter::Client#update(msg) upon 500 HTTP response" do
   
   it "should make POST HTTP request to appropriate URL" do
     lambda do
-      Net::HTTP::Post.should_receive(:new).with(@expected_uri).and_return(@request)
+      Net::HTTP::Post.should_receive(:new).with(@expected_uri, @header).and_return(@request)
       @client.update(@message)
     end.should raise_error(Twitter::RESTError)
   end
@@ -282,6 +288,7 @@ describe "Twitter::Client#send_direct_message" do
     
     @http = mas_net_http(@response)
     @client = Twitter::Client.from_config 'config/twitter.yml'
+    @header = @client.send(:http_header)
     
     @login = @client.instance_eval("@login")
     @password = @client.instance_eval("@password")
@@ -300,7 +307,7 @@ describe "Twitter::Client#send_direct_message" do
   end
   
   it "should POST to expected URI" do
-    Net::HTTP::Post.should_receive(:new).with(@expected_uri).once.and_return(@request)
+    Net::HTTP::Post.should_receive(:new).with(@expected_uri, @header).once.and_return(@request)
     @client.send_direct_message(@user, @message)
   end
   

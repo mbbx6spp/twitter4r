@@ -69,7 +69,7 @@ module Twitter #:nodoc:
     end
 
     protected
-      attr_accessor :login, :password, :header
+      attr_accessor :login, :password
       
       def unmarshall_statuses(status_array)
         status_array.collect do |status|
@@ -106,7 +106,6 @@ module Twitter #:nodoc:
       end
       
       def handle_rest_response(response, uri)
-        puts response.class.name
         unless ["200", "201"].member?(response.code)
           raise_rest_error(response, uri)
         end
@@ -121,8 +120,8 @@ module Twitter #:nodoc:
       end
 
       def http_header
-        @header ||= { 'User-Agent' => "Twitter4R v#{Twitter::Version.to_version} [#{@@config.user_agent}]" }
-        @header
+        @@header ||= { 'User-Agent' => "Twitter4R v#{Twitter::Version.to_version} [#{@@config.user_agent}]" }
+        @@header
       end
   end
 end

@@ -1,6 +1,5 @@
-#!/usr/bin/env ruby
-
 require 'twitter'
+
 
 client = Twitter::Client.new(:login => 'mylogin', :password => 'mypassword')
 begin

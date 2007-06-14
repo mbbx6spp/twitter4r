@@ -5,7 +5,6 @@ gem('rspec', '>=1.0.0')
 
 require('rake')
 require('twitter')
-require('spec/spec_autotest')
 
 import('tasks/clean.rake')
 import('tasks/doc.rake')

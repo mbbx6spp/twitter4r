@@ -1,5 +1,11 @@
+gem 'rspec', '>=1.0.0'
+require('spec')
 require('spec/rake/spectask')
 require('spec/rake/verify_rcov')
+
+gem 'ZenTest'
+require('autotest')
+require('autotest/rspec')
 
 desc "Run specs"
 Spec::Rake::SpecTask.new(:spec) do |t|

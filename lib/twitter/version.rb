@@ -1,3 +1,6 @@
+# version.rb contains <tt>Twitter::Version</tt> that provides helper
+# methods related to versioning of the <tt>Twitter4R</tt> project.
+
 module Twitter::Version #:nodoc:
   MAJOR = 0
   MINOR = 1

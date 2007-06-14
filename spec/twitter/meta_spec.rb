@@ -90,7 +90,9 @@ describe "Twitter::Meta" do
     spec = @meta.gem_spec
     expected_spec_hash = @expected_yaml_hash['spec']
     expected_spec_hash.each do |key, val|
-      spec.send(key).should.eql? expected_spec_hash[key]
+      unless val.is_a?(Hash)
+        spec.send(key).should.eql? expected_spec_hash[key]
+      end
     end
   end
 end

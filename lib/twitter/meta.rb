@@ -1,3 +1,6 @@
+# meta.rb contains <tt>Twitter::Meta</tt> and related classes that
+# help define the metadata of the <tt>Twitter4R</tt> project.
+
 require('rubygems')
 require('erb')
 
@@ -39,7 +42,13 @@ class Twitter::Meta #:nodoc:
   def gem_spec
     @gem_spec ||= Gem::Specification.new do |spec|
       self.spec_info.each do |key, val|
-        spec.send("#{key}=", val)
+        if val.is_a?(Hash)
+          val.each do |k, v|
+            spec.send(key, k, v)
+          end
+        else
+          spec.send("#{key}=", val)
+        end
       end
     end
     @gem_spec

@@ -1,12 +1,21 @@
+<% require('pathname') %>
 spec:
   name: twitter4r
   version: <%= Twitter::Version.to_version %>
-  summary: A clean Twitter client API in pure Ruby (not command-line client). Will include Twitter add-ons also in Ruby.
+  summary: A clean Twitter client API in pure Ruby. Will include Twitter add-ons also in Ruby.
   require_path: lib
   has_rdoc: true
   autorequire: twitter
   bindir: bin
-  executables: 
+#  executables: 
+#  - twitter4r
+  add_dependency:
+    json: >=0.4.3
+  requirements:
+  - Ruby 1.8.4+
+  - json gem, version 0.4.3 or higher
+  - jcode (for unicode support)
+  required_ruby_version: >=1.8.2
   author: Susan Potter
   email: twitter4r-devel@rubyforge.org
   homepage: http://twitter4r.rubyforge.org

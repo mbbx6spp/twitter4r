@@ -17,7 +17,7 @@ spec:
   - jcode (for unicode support)
   required_ruby_version: >=1.8.2
   author: Susan Potter
-  email: twitter4r-devel@rubyforge.org
+  email: twitter4r-users@googlegroups.com
   homepage: http://twitter4r.rubyforge.org
   rubyforge_project: twitter4r
   files: <% (self.project_files + self.spec_files).each do |file| %>

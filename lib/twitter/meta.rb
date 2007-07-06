@@ -6,7 +6,7 @@ require('erb')
 
 class Twitter::Meta #:nodoc:
   attr_accessor :root_dir
-  attr_reader :pkg_info, :gem_spec, :project_files, :spec_files
+  attr_reader :gem_spec, :project_files, :spec_files
 
   # Initializer for Twitter::Meta class.  Takes <tt>root_dir</tt> as parameter.
   def initialize(root_dir)

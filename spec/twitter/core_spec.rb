@@ -96,3 +96,32 @@ describe "Twitter::User#eql?" do
     @other.should eql(@other)
   end
 end
+
+describe "Twitter::ClassUtilMixin#require_block" do
+  before(:each) do
+    class TestClass
+      include Twitter::ClassUtilMixin
+    end
+    @test_subject = TestClass.new
+  end
+  
+  it "should respond to :require_block" do
+    @test_subject.should respond_to(:require_block)
+  end
+  
+  it "should raise ArgumentError when block not given" do
+    lambda {
+      @test_subject.send(:require_block, false)
+    }.should raise_error(ArgumentError)
+  end
+  
+  it "should not raise ArgumentError when block is given" do
+    lambda {
+      @test_subject.send(:require_block, true)
+    }.should_not raise_error(ArgumentError)
+  end
+  
+  after(:each) do
+    @test_subject = nil
+  end
+end

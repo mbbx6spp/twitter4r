@@ -1,19 +1,40 @@
 # config.rb contains classes, methods and extends existing Twitter4R classes 
 # to provide easy configuration facilities.
 
-module Twitter #:nodoc:
+module Twitter
   # Represents global configuration for Twitter::Client.
   # Can override the following configuration options:
   # * <tt>protocol</tt> - <tt>:http</tt>, <tt>:https</tt> or <tt>:ssl</tt> supported.  <tt>:ssl</tt> is an alias for <tt>:https</tt>.  Defaults to <tt>:ssl</tt>
   # * <tt>host</tt> - hostname to connect to for the Twitter service.  Defaults to <tt>'twitter.com'</tt>.
   # * <tt>port</tt> - port to connect to for the Twitter service.  Defaults to <tt>443</tt>.
+  # * <tt>proxy_host</tt> - proxy host to use.  Defaults to nil.
+  # * <tt>proxy_port</tt> - proxy host to use.  Defaults to nil.
+  # * <tt>proxy_user</tt> - proxy username to use.  Defaults to nil.
+  # * <tt>proxy_pass</tt> - proxy password to use.  Defaults to nil.
+  # * <tt>user_agent</tt> - user agent string to use for each request of the HTTP header.
+  # * <tt>application_name</tt> - name of your client application.  Defaults to 'Twitter4R'
+  # * <tt>application_version</tt> - version of your client application.  Defaults to current <tt>Twitter::Version.to_version</tt>.
+  # * <tt>application_url</tt> - URL of your client application.  Defaults to http://twitter4r.rubyforge.org.
+  
   class Config
     include ClassUtilMixin
-    @@ATTRIBUTES = [:protocol, :host, :port, :proxy_host, :proxy_port, :user_agent]
+    @@ATTRIBUTES = [
+      :protocol, 
+      :host, 
+      :port, 
+      :proxy_host, 
+      :proxy_port, 
+      :proxy_user, 
+      :proxy_pass, 
+      :user_agent,
+      :application_name,
+      :application_version,
+      :application_url,
+    ]
     attr_accessor *@@ATTRIBUTES
     
-    # Override of #eql? to ensure RSpec specifications run correctly.
-    # Also done to follow Ruby best practices.
+    # Override of Object#eql? to ensure RSpec specifications run 
+    # correctly. Also done to follow Ruby best practices.
     def eql?(other)
       return true if self == other
       @@ATTRIBUTES.each do |att|
@@ -23,13 +44,16 @@ module Twitter #:nodoc:
     end
   end
 
-  class Client #:nodoc:
+  class Client
     @@defaults = { :host => 'twitter.com', 
                    :port => 443, 
                    :protocol => :ssl,
                    :proxy_host => nil,
                    :proxy_port => nil,
                    :user_agent => "default",
+                   :application_name => 'Twitter4R',
+                   :application_version => Twitter::Version.to_version,
+                   :application_url => 'http://twitter4r.rubyforge.org',
     }
     @@config = Twitter::Config.new(@@defaults)
 

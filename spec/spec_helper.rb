@@ -1,5 +1,6 @@
 require 'spec'
 require 'twitter'
+require 'twitter/console'
 
 # Add helper methods here if relevant to multiple _spec.rb files
 
@@ -14,6 +15,11 @@ end
 # Spec helper that nil-izes objects passed in
 def nilize(*objects)
   objects.each {|obj| obj = nil }
+end
+
+# Returns default <tt>client</tt> context object
+def client_context(file = 'config/twitter.yml')
+  Twitter::Client.from_config(file)
 end
 
 # Spec helper that returns a mocked <tt>Twitter::Config</tt> object
@@ -59,8 +65,8 @@ end
 # Spec helper that returns a mocked <tt>Net::HTTP</tt> object and 
 # stubs out the <tt>request</tt> method to return the given 
 # <tt>response</tt>
-def mas_net_http(response)
-  http = mock(Net::HTTP)
+def mas_net_http(response, obj_stubs = {})
+  http = mock(Net::HTTP, obj_stubs)
   Net::HTTP.stub!(:new).and_return(http)
   http.stub!(:request).and_return(response)
   http.stub!(:start).and_yield(http)
@@ -122,4 +128,5 @@ end
 def _create_http_response(mock_response, code, message)
   mock_response.stub!(:code).and_return(code)
   mock_response.stub!(:message).and_return(message)
+  mock_response.stub!(:is_a?).and_return(true) if ["200", "201"].member?(code)
 end

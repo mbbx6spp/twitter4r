@@ -31,28 +31,20 @@ describe "Twitter::Meta cache policy" do
     @expected_spec_files = spec_files
   end
   
-  it "should store value returned from pkg_info in @pkg_info after first YAML load" do
-    @meta.instance_eval("@pkg_info").should.eql?(nil)
-    @meta.pkg_info
-    @meta.instance_eval("@pkg_info").should eql?(@expected_pkg_info)
-    @meta.pkg_info
-    @meta.instance_eval("@pkg_info").should eql?(@expected_pkg_info)
-  end
-  
   it "should store value returned from project_files in @project_files after first glob" do
-    @meta.instance_eval("@project_files").should.eql?(nil)
+    @meta.instance_eval("@project_files").should eql(nil)
     @meta.project_files
-    @meta.instance_eval("@project_files").should.eql?(@expected_project_files)
+    @meta.instance_eval("@project_files").should eql(@expected_project_files)
     @meta.project_files
-    @meta.instance_eval("@project_files").should.eql?(@expected_project_files)
+    @meta.instance_eval("@project_files").should eql(@expected_project_files)
   end
   
   it "should store value returned from spec_files in @spec_files after first glob" do
-    @meta.instance_eval("@spec_files").should.eql?(nil)
+    @meta.instance_eval("@spec_files").should eql(nil)
     @meta.spec_files
-    @meta.instance_eval("@spec_files").should.eql?(@expected_spec_files)
+    @meta.instance_eval("@spec_files").should eql(@expected_spec_files)
     @meta.spec_files
-    @meta.instance_eval("@spec_files").should.eql?(@expected_spec_files)
+    @meta.instance_eval("@spec_files").should eql(@expected_spec_files)
   end
 end
 

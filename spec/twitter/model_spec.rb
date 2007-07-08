@@ -456,3 +456,18 @@ describe Twitter::User, "#defriend" do
     nilize(@twitter, @user, @friend)
   end
 end
+
+describe Twitter::User, ".featured" do
+  before(:each) do
+    @twitter = client_context
+  end
+  
+  it "should delegate #featured(:users) message to given client context" do
+    @twitter.should_receive(:featured).with(:users).and_return([])
+    Twitter::User.featured(@twitter)
+  end
+  
+  after(:each) do
+    nilize(@twitter)
+  end
+end

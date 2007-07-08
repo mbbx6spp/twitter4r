@@ -35,6 +35,8 @@ describe Twitter::Client, "#http_header" do
       'User-Agent' => "Twitter4R v#{Twitter::Version.to_version} [#{@user_agent}]",
     }
     @twitter = client_context
+    # resent @@http_header class variable in Twitter::Client class
+    Twitter::Client.class_eval("@@http_header = nil")
   end
   
   it "should always return expected HTTP headers" do
@@ -53,8 +55,6 @@ describe Twitter::Client, "#http_header" do
   
   after(:each) do
     nilize(@user_agent, @application_name, @application_version, @application_url, @twitter, @expected_headers)
-    # resent @@http_header class variable in Twitter::Client class
-    Twitter::Client.class_eval("@@http_header = nil")
   end
 end
 

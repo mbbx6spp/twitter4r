@@ -1,6 +1,7 @@
 require 'spec'
 require 'twitter'
 require 'twitter/console'
+require 'twitter/extras'
 
 # Add helper methods here if relevant to multiple _spec.rb files
 

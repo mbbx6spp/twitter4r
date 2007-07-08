@@ -57,7 +57,7 @@ describe Twitter::Client, "#message" do
   end
   
   it "should invoke #http_connect with expected arguments for :post case" do
-  	@twitter.should_receive(:http_connect).with(:text => @message.text, :user => @message.recipient.to_i).and_return(@response)
+  	@twitter.should_receive(:http_connect).with({:text => @message.text, :user => @message.recipient.to_i}.to_http_str).and_return(@response)
     @twitter.message(:post, @message.text, @message.recipient)
   end
   

@@ -15,7 +15,7 @@ class Twitter::Client
   #  @twitter.user('mylogin') #=> Twitter::User object instance for user with screen name 'mylogin'
   def user(id, action = :info)
   	response = http_connect {|conn| create_http_get_request(@@USER_URIS[action], :id => id) }
-  	bless_model(Twitter::User.unmarshal(response.body))
+  	bless_models(Twitter::User.unmarshal(response.body))
   end
   
   # Syntactic sugar for queries relating to authenticated user in Twitter's User API

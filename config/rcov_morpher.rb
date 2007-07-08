@@ -1,7 +1,10 @@
+module RCov; end
 
 require('erb')
 require('tidy')
 require('hpricot')
+
+require(File.join(File.dirname(__FILE__), '..', 'lib', 'twitter'))
 
 class File #:nodoc:
   class << self
@@ -13,7 +16,7 @@ class File #:nodoc:
 end
 
 # Follows <tt>Strategy</tt> design pattern
-class RCovMorpher
+class RCov::OutputMorpher
   # transforms given list of <tt>files</tt> based on new template.
   def transform(files, output_dir = '../web/rcov/', template = 'templates/rcov.rhtml')
     files.each do |file|
@@ -30,6 +33,7 @@ class RCovMorpher
       table_content = parser.find_element('table')
       code_content = table_content.next_sibling
       index = (fname == 'index.html')
+      version = Twitter::Version.to_version
       File.delete(fname) if File.exists?(fname)
       File.open("#{output_dir}/#{fname}", 'w') do |f|
         f.puts(rhtml.result(binding))
@@ -38,11 +42,17 @@ class RCovMorpher
   end
 end
 
-if __FILE__ == $0
-  overrides = YAML.load(File.read_local('tidy.yml'))
-  Tidy.path = overrides['path'] || '/usr/lib/libtidy-0.99.so.0'
-  html_files = Dir.glob(overrides['html_glob'] || 'doc/rcov/**/*.html')
+module RCov
+  class << self
+    # returns html files to morph based on tidy configuration file
+    def configure_morpher(tidy_conf = 'tidy.yml')
+      overrides = YAML.load(File.read_local('tidy.yml'))
+      Tidy.path = overrides['path'] || '/usr/lib/libtidy-0.99.so.0'
+      Dir.glob(overrides['html_glob'] || 'doc/rcov/**/*.html')      
+    end
+  end
+end
 
-  morpher = RCovMorpher.new
-  morpher.transform(html_files)
+if __FILE__ == $0
+  RCov::OutputMorpher.new.transform(RCov.configure_morpher)
 end

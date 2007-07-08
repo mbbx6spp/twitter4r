@@ -122,6 +122,38 @@ module Twitter
         end
     end
   end
+  
+  module AuthenticatedUserMixin
+  	def self.included(base)
+  		base.send(:include, InstanceMethods)
+  	end
+  	
+  	module InstanceMethods
+      # Returns an Array of user objects that represents the authenticated
+      # user's friends on Twitter.
+      def followers
+        @client.user(@id, :followers)
+      end
+      
+      # Adds given user as a friend.  Returns user object as given by 
+      # <tt>Twitter</tt> REST server response.
+      # 
+      # For <tt>user</tt> argument you may pass in the unique integer 
+      # user ID, screen name or Twitter::User object representation.
+      def befriend(user)
+      	@client.friend(:add, user)
+      end
+      
+      # Removes given user as a friend.  Returns user object as given by 
+      # <tt>Twitter</tt> REST server response.
+      # 
+      # For <tt>user</tt> argument you may pass in the unique integer 
+      # user ID, screen name or Twitter::User object representation.
+      def defriend(user)
+      	@client.friend(:remove, user)
+      end
+  	end
+  end
 
   # Represents a <tt>Twitter</tt> user
   class User
@@ -159,9 +191,7 @@ module Twitter
     def bless(client)
       basic_bless(client)
       self.instance_eval(%{
-        def followers
-          @client.user(@id, :followers)
-        end
+      	self.class.send(:include, Twitter::AuthenticatedUserMixin)
       }) if self.is_me? and not self.respond_to?(:followers)
       self
     end
@@ -178,31 +208,10 @@ module Twitter
       @screen_name == @client.instance_eval("@login")
     end
     
-    # Returns an Array of user objects that represents this users
-    # friends on Twitter.
-    # 
-    # Note: Currently uses a naive approach, which will be rectified in a
-    # future release.
+    # Returns an Array of user objects that represents the authenticated
+    # user's friends on Twitter.
     def friends
       @client.user(@id, :friends)
-    end
-    
-    # Adds given user as a friend.  Returns user object as given by 
-    # <tt>Twitter</tt> REST server response.
-    # 
-    # For <tt>user</tt> argument you may pass in the unique integer 
-    # user ID, screen name or Twitter::User object representation.
-    def befriend(user)
-    	@client.friend(:add, user)
-    end
-    
-    # Removes given user as a friend.  Returns user object as given by 
-    # <tt>Twitter</tt> REST server response.
-    # 
-    # For <tt>user</tt> argument you may pass in the unique integer 
-    # user ID, screen name or Twitter::User object representation.
-    def defriend(user)
-    	@client.friend(:remove, user)
     end    
   end # User
   

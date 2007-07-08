@@ -74,6 +74,18 @@ module Twitter
         @id
       end
       
+      # Returns string representation of model object instance.
+      # 
+      # For example,
+      #  status = Twitter::Status.new(:text => 'my status message')
+      #  status.to_s #=> 'my status message'
+      # 
+      # If a model class doesn't have a @text attribute defined 
+      # the default Object#to_s will be returned as the result.
+      def to_s
+        self.respond_to(:text) ? @text : super.to_s
+      end
+      
       # Returns hash representation of model object instance.
       # 
       # For example,
@@ -174,6 +186,24 @@ module Twitter
     def friends
       @client.user(@id, :friends)
     end
+    
+    # Adds given user as a friend.  Returns user object as given by 
+    # <tt>Twitter</tt> REST server response.
+    # 
+    # For <tt>user</tt> argument you may pass in the unique integer 
+    # user ID, screen name or Twitter::User object representation.
+    def befriend(user)
+    	@client.friend(:add, user)
+    end
+    
+    # Removes given user as a friend.  Returns user object as given by 
+    # <tt>Twitter</tt> REST server response.
+    # 
+    # For <tt>user</tt> argument you may pass in the unique integer 
+    # user ID, screen name or Twitter::User object representation.
+    def defriend(user)
+    	@client.friend(:remove, user)
+    end    
   end # User
   
   # Represents a status posted to <tt>Twitter</tt> by a <tt>Twitter</tt> user.
@@ -191,6 +221,34 @@ module Twitter
       def find(id, client)
         client.status(:get, id)
       end
+      
+      # Creates a new status for the authenticated user of the given 
+      # <tt>client</tt> context.
+      # 
+      # You MUST include a valid/authenticated <tt>client</tt> context 
+      # in the given <tt>params</tt> argument.
+      # 
+      # For example:
+      #  status = Twitter::Status.create(
+      #    :text => 'I am shopping for flip flops',
+      #    :client => client)
+      # 
+      # An <tt>ArgumentError</tt> will be raised if no valid client context
+      # is given in the <tt>params</tt> Hash.  For example,
+      #  status = Twitter::Status.create(:text => 'I am shopping for flip flops')
+      # The above line of code will raise an <tt>ArgumentError</tt>.
+      # 
+      # The same is true when you do not provide a <tt>:text</tt> key-value
+      # pair in the <tt>params</tt> argument given.
+      # 
+      # The Twitter::Status object returned after the status successfully
+      # updates on the Twitter server side is returned from this method.
+      def create(params)
+      	client, text = params[:client], params[:text]
+      	raise ArgumentError, 'Valid client context must be provided' unless client.is_a?(Twitter::Client)
+      	raise ArgumentError, 'Must provide text for the status to update' unless text.is_a?(String)
+      	client.status(:post, text)
+      end
     end
     
     protected
@@ -200,4 +258,64 @@ module Twitter
         @created_at = Time.parse(@created_at) if @created_at.is_a?(String)
       end    
   end # Status
+  
+  # Represents a direct message on <tt>Twitter</tt> between <tt>Twitter</tt> users.
+  class Message
+    include ModelMixin
+    @@ATTRIBUTES = [:id, :recipient, :sender, :text, :created_at]
+    attr_accessor *@@ATTRIBUTES
+    
+    class << self
+      # Used as factory method callback
+      def attributes; @@ATTRIBUTES; end
+      
+      # Raises <tt>NotImplementedError</tt> because currently 
+      # <tt>Twitter</tt> doesn't provide a facility to retrieve 
+      # one message by unique ID.
+      def find(id, client)
+        raise NotImplementedError, 'Twitter has yet to implement a REST API for this.  This is not a Twitter4R library limitation.'
+      end
+      
+      # Creates a new direct message from the authenticated user of the 
+      # given <tt>client</tt> context.
+      # 
+      # You MUST include a valid/authenticated <tt>client</tt> context 
+      # in the given <tt>params</tt> argument.
+      # 
+      # For example:
+      #  status = Twitter::Message.create(
+      #    :text => 'I am shopping for flip flops',
+      #    :receipient => 'anotherlogin',
+      #    :client => client)
+      # 
+      # An <tt>ArgumentError</tt> will be raised if no valid client context
+      # is given in the <tt>params</tt> Hash.  For example,
+      #  status = Twitter::Status.create(:text => 'I am shopping for flip flops')
+      # The above line of code will raise an <tt>ArgumentError</tt>.
+      # 
+      # The same is true when you do not provide any of the following
+      # key-value pairs in the <tt>params</tt> argument given:
+      # * <tt>text</tt> - the String that will be the message text to send to <tt>user</tt>
+      # * <tt>recipient</tt> - the user ID, screen_name or Twitter::User object representation of the recipient of the direct message
+      # 
+      # The Twitter::Message object returned after the direct message is 
+      # successfully sent on the Twitter server side is returned from 
+      # this method.
+      def create(params)
+      	client, text, recipient = params[:client], params[:text], params[:recipient]
+      	raise ArgumentError, 'Valid client context must be given' unless client.is_a?(Twitter::Client)
+      	raise ArgumentError, 'Message text must be supplied to send direct message' unless text.is_a?(String)
+      	raise ArgumentError, 'Recipient user must be specified to send direct message' unless [Twitter::User, Integer, String].member?(recipient.class)
+      	client.message(:post, text, recipient)
+      end
+    end
+    
+    protected
+      # Constructor callback
+      def init
+        @sender = User.new(@sender) if @sender.is_a?(Hash)
+        @recipient = User.new(@recipient) if @recipient.is_a?(Hash)
+        @created_at = Time.parse(@created_at) if @created_at.is_a?(String)
+      end
+  end # Message
 end # Twitter

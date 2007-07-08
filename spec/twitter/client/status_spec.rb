@@ -1,3 +1,5 @@
+require File.join(File.dirname(__FILE__), '..', '..', 'spec_helper')
+
 describe Twitter::Client, "#status" do
   before(:each) do
     @twitter = client_context

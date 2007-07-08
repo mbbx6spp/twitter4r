@@ -254,4 +254,205 @@ describe Twitter::User, "#followers" do
   end
 end
 
-# TODO: Add specifications for ModelMix#to_int
+describe Test::Model, "#to_i" do
+  before(:each) do
+  	@id = 234324285
+  	class Test::Model
+  		attr_accessor :id
+  	end
+    @model = Test::Model.new(:id => @id)
+  end
+ 	
+  it "should return @id attribute" do
+    @model.to_i.should eql(@id)
+  end
+  
+  after(:each) do
+    nilize(@model, @id)
+  end
+end
+
+describe Test::Model, "#to_s" do
+  before(:each) do
+  	class Test::Model
+  		attr_accessor :text
+  	end
+  	@text = 'Some text for the message body here'
+    @model = Test::Model.new(:text => @text)
+  end
+  
+  it "should return expected text when a @text attribute exists for the model" do
+    @model.to_s.should eql(@text)
+  end
+  
+  after(:each) do
+    nilize(@model)
+  end
+end
+
+describe Twitter::Message, ".find" do
+  it "should raise NotImplementedError due to Twitter (as opposed to Twitter4R) API limitation" do
+    lambda {
+    	Twitter::Message.find(123, nil)
+    }.should raise_error(NotImplementedError)
+  end
+end
+
+describe Twitter::Status, ".create" do
+  before(:each) do
+    @twitter = client_context
+    @text = 'My status update'
+    @status = Twitter::Status.new(:text => @text, :client => @twitter)
+  end
+  
+  it "should invoke #status(:post, text) on client context given" do
+    @twitter.should_receive(:status).with(:post, @text).and_return(@status)
+    Twitter::Status.create(:text => @text, :client => @twitter)
+  end
+  
+  it "should raise an ArgumentError when no client is given in params" do
+    lambda {
+    	Twitter::Status.create(:text => @text)
+    }.should raise_error(ArgumentError)
+  end
+  
+  it "should raise an ArgumentError when no text is given in params" do
+  	@twitter.should_receive(:is_a?).with(Twitter::Client)
+    lambda {
+    	Twitter::Status.create(:client => @twitter)
+    }.should raise_error(ArgumentError)
+  end
+  
+  it "should raise an ArgumentError when text given in params is not a String" do
+    lambda {
+    	Twitter::Status.create(:client => @twitter, :text => 234493)
+    }.should raise_error(ArgumentError)
+  end
+  
+  it "should raise an ArgumentError when client context given in params is not a Twitter::Client object" do
+    lambda {
+    	Twitter::Status.create(:client => 'a string instead of a Twitter::Client', :text => @text)
+    }.should raise_error(ArgumentError)
+  end
+  
+  after(:each) do
+    nilize(@twitter, @text, @status)
+  end
+end
+
+describe Twitter::Message, ".create" do
+  before(:each) do
+    @twitter = client_context
+    @text = 'Just between you and I, Lantana and Gosford Park are two of my favorite movies'
+    @recipient = Twitter::User.new(:id => 234958)
+    @message = Twitter::Message.new(:text => @text, :recipient => @recipient)
+  end
+  
+  it "should invoke #message(:post, text, recipient) on client context given" do
+    @twitter.should_receive(:message).with(:post, @text, @recipient).and_return(@message)
+    Twitter::Message.create(:client => @twitter, :text => @text, :recipient => @recipient)
+  end
+  
+  it "should raise an ArgumentError if no client context is given in params" do
+    lambda {
+    	Twitter::Message.create(:text => @text, :recipient => @recipient)
+    }.should raise_error(ArgumentError)
+  end
+  
+  it "should raise an ArgumentError if client conext given in params is not a Twitter::Client object" do
+    lambda {
+    	Twitter::Message.create(
+    		:client => 3.14159, 
+    		:text => @text, 
+    		:recipient => @recipient)
+    }.should raise_error(ArgumentError)
+  end
+  
+  it "should raise an ArgumentError if no text is given in params" do
+  	@twitter.should_receive(:is_a?).with(Twitter::Client)
+    lambda {
+    	Twitter::Message.create(
+    		:client => @twitter,
+    		:recipient => @recipient)
+    }.should raise_error(ArgumentError)
+  end
+  
+  it "should raise an ArgumentError if text given in params is not a String" do
+    @twitter.should_receive(:is_a?).with(Twitter::Client)
+    lambda {
+    	Twitter::Message.create(
+    		:client => @twitter,
+    		:text => Object.new,
+    		:recipient => @recipient)
+    }.should raise_error(ArgumentError)
+  end
+  
+  it "should raise an ArgumentError if no recipient is given in params" do
+    @text.should_receive(:is_a?).with(String)
+    lambda {
+    	Twitter::Message.create(
+    		:client => @twitter,
+    		:text => @text)
+    }.should raise_error(ArgumentError)
+  end
+  
+  it "should raise an ArgumentError if recipient given in params is not a Twitter::User, Integer or String object" do
+    @text.should_receive(:is_a?).with(String)
+    lambda {
+    	Twitter::Message.create(
+    		:client => @twitter,
+    		:text => @text,
+    		:recipient => 3.14159)
+    }.should raise_error(ArgumentError)
+  end
+  
+  after(:each) do
+    nilize(@twitter, @text, @recipient, @message)
+  end
+end
+
+describe Twitter::User, "#befriend" do
+  before(:each) do
+    @twitter = client_context
+    @user = Twitter::User.new(
+    	:id => 1234, 
+    	:screen_name => 'mylogin',
+    	:client => @twitter)
+    @friend = Twitter::User.new(
+    	:id => 5678, 
+    	:screen_name => 'friend',
+    	:client => @twitter)
+  end
+  
+  it "should invoke #friend(:add, user) on client context" do
+    @twitter.should_receive(:friend).with(:add, @friend).and_return(@friend)
+    @user.befriend(@friend)
+  end
+  
+  after(:each) do
+    nilize(@twitter, @user, @friend)
+  end
+end
+
+describe Twitter::User, "#defriend" do
+  before(:each) do
+    @twitter = client_context
+    @user = Twitter::User.new(
+    	:id => 1234, 
+    	:screen_name => 'mylogin',
+    	:client => @twitter)
+    @friend = Twitter::User.new(
+    	:id => 5678, 
+    	:screen_name => 'friend',
+    	:client => @twitter)
+  end
+  
+  it "should invoke #friend(:remove, user) on client context" do
+    @twitter.should_receive(:friend).with(:remove, @friend).and_return(@friend)
+    @user.defriend(@friend)
+  end
+  
+  after(:each) do
+    nilize(@twitter, @user, @friend)
+  end
+end

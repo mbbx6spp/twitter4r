@@ -1,3 +1,19 @@
+require File.join(File.dirname(__FILE__), '..', '..', 'spec_helper')
+
+describe "Twitter::Client" do
+  before(:each) do
+    @init_hash = { :login => 'user', :password => 'pass' }
+  end
+
+  it ".new should accept login and password as initializer hash keys and set the values to instance values" do
+    client = nil
+    lambda do
+      client = Twitter::Client.new(@init_hash)
+    end.should_not raise_error
+    client.send(:login).should eql(@init_hash[:login])
+    client.send(:password).should eql(@init_hash[:password])
+  end  
+end
 
 describe Twitter::Client, "#http_header" do
   before(:each) do

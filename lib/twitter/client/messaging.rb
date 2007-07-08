@@ -51,7 +51,7 @@ class Twitter::Client
     uri = @@MESSAGING_URIS[action]
     case action
     when :post
-      response = http_connect(:text => value, :user => user.to_i) {|conn| create_http_post_request(uri) }
+      response = http_connect({:text => value, :user => user.to_i}.to_http_str) {|conn| create_http_post_request(uri) }
     when :delete
       response = http_connect {|conn| create_http_delete_request(uri, :id => value.to_i) }
     end

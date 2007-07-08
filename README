@@ -1,37 +1,29 @@
 = Twitter4R
 
-*Developers*: 
-* Susan Potter (http://SusanPotter.NET)
-*Contributors*: 
+* Project Website - http://twitter4r.rubyforge.org
+* Mailing List - http://groups.google.com/group/twitter4r-users
+
+== Developers
+* {Susan Potter}[http://SusanPotter.NET] <me at susanpotter dot net>
+
+== Contributors
 * Kaiichi Matsunaga <ma2 at lifemedia dot co dot jp>
 
+== Description
 Twitter4R provides an object based API to query or update your Twitter account via pure Ruby.  It hides the ugly HTTP/REST code from your code.
 
 == External Dependencies
-* Ruby 1.8 (tested with 1.8.4+)
-* RSpec gem 1.0.0
-* JSON gem 0.4.3
+* Ruby 1.8 (tested with 1.8.5)
+* RSpec gem 1.0.0+ (tested with 1.0.4)
+* JSON gem 0.4.3+ (tested with versions: 0.4.3, and 0.1.1)
 * jcode (for unicode support)
 
-== Query Public Timeline
-
-  :include:examples/public_timeline.rb
-  
-== Query Friend Timeline
-
-  :include:examples/friend_timeline.rb
-
-== Query Friend Current Statuses
-
-  :include:examples/friend_statuses.rb
-
-== Query Follower Current Statuses
-
-  :include:examples/follower_statuses.rb
-
-== Update Your Status
-
-  :include:examples/update.rb
-
-== Send Direct Message
-  :include:examples/direct_message.rb
+== Usage Examples
+Twitter4R starting with version 0.1.1 and above is organized into seven parts:
+* {Configuration API}[link:files/examples/configure_rb.html]
+* {Friendship API}[link:files/examples/friendship_rb.html]
+* {Messaging API}[link:files/examples/messaging_rb.html]
+* {Model API}[link:files/examples/model_rb.html]
+* {Status API}[link:files/examples/status_rb.html]
+* {Timeline API}[link:files/examples/timeline_rb.html]
+* {User API}[link:files/examples/user_rb.html]

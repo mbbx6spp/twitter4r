@@ -27,4 +27,10 @@
 #    conf.proxy_port = 8080
 #    conf.proxy_user = 'myuser'
 #    conf.proxy_pass = 'mypass'
+#
+#    # We can also change the User-Agent and X-Twitter-Client* HTTP headers
+#    conf.user_agent = 'MyAppAgentName'
+#    conf.application_name = 'MyAppName'
+#    conf.application_version = 'v1.5.6'
+#    conf.application_url = 'http://myapp.url'
 #  end

@@ -13,8 +13,9 @@ Spec::Rake::SpecTask.new(:spec) do |t|
   t.spec_opts = ['--color', '--format', 'html']
   t.out = 'doc/rspec/index.html'
   t.rcov = true
-  t.rcov_opts = ['--html', '--exclude', "#{ENV['HOME']}/.autotest,spec/spec_helper.rb"] #, '--xrefs']
+  t.rcov_opts = ['--html', '--exclude', "#{ENV['HOME']}/.autotest,spec/"] #, '--xrefs']
   t.rcov_dir = 'doc/rcov'
+  t.fail_on_error = true
 end
 
 desc "Run specs with coverage verification"

@@ -11,7 +11,7 @@ import('tasks/doc.rake')
 import('tasks/pkg.rake')
 import('tasks/rubyforge.rake')
 import('tasks/spec.rake')
-import('tasks/todo.rake')
+#import('tasks/todo.rake')
 import('tasks/web.rake')
 
 task :default => [:coverage]

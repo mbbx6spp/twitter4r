@@ -4,6 +4,11 @@ Catalog(ue) of changes for Twitter4R 0.1.x releases including Retrospectiva tick
 
 == 0.2.0 Changes
 
+=== 2007-07-08
+* Added featured users API as an "extra" (#19).
+* Productionized website for publishing.
+* Published Ruby Gem on Rubyforge.
+
 === 2007-07-07
 * Refactored Twitter4R API to be more consistent, by grouping APIs (#6):
   - Messaging APIs: direct_messages, new, destroy, replies

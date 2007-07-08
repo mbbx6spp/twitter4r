@@ -185,9 +185,6 @@ module Twitter
     #  followers = user.followers if user.is_me?
     # Or:
     #  followers = user.followers if user.respond_to?(:followers)
-    # 
-    # TODO: benchmark to see which of the above scenarios is better 
-    # performance wise (if significant difference).
     def bless(client)
       basic_bless(client)
       self.instance_eval(%{
@@ -205,6 +202,10 @@ module Twitter
       # the edge case where this would cause a problem?  i.e. 
       # changing authenticated user after initial use of 
       # authenticated API.
+      # TBD: To cache or not to cache.  That is the question!
+      # Since this is an implementation detail we can leave this for 
+      # subsequent 0.2.x releases.  It doesn't have to be decided before 
+      # the 0.2.0 launch.
       @screen_name == @client.instance_eval("@login")
     end
     

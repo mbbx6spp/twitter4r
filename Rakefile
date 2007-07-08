@@ -8,10 +8,10 @@ require('twitter')
 
 import('tasks/clean.rake')
 import('tasks/doc.rake')
+import('tasks/find.rake')
 import('tasks/pkg.rake')
 import('tasks/rubyforge.rake')
 import('tasks/spec.rake')
-#import('tasks/todo.rake')
 import('tasks/web.rake')
 
 task :default => [:coverage]

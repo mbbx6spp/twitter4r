@@ -22,7 +22,7 @@
 #    conf.port = 443
 #    
 #    # We can set proxy information for Twitter4R
-#    # By default all following values are set to <tt>nil<tt>.
+#    # By default all following values are set to <tt>nil</tt>.
 #    conf.proxy_host = 'myproxy.host'
 #    conf.proxy_port = 8080
 #    conf.proxy_user = 'myuser'

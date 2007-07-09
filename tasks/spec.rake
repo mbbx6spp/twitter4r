@@ -11,7 +11,7 @@ desc "Run specs"
 Spec::Rake::SpecTask.new(:spec) do |t|
   t.spec_files = 'spec/**/*.rb'
   t.spec_opts = ['--color', '--format', 'html']
-  t.out = 'doc/rspec/index.html'
+  t.out = 'doc/spec/index.html'
   t.rcov = true
   t.rcov_opts = ['--html', '--exclude', "#{ENV['HOME']}/.autotest,spec/"] #, '--xrefs']
   t.rcov_dir = 'doc/rcov'

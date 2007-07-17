@@ -30,7 +30,7 @@ class Twitter::Client
     when :get
     	response = http_connect {|conn|	create_http_get_request(uri, :id => value.to_i) }
     when :post
-    	response = http_connect({:status => value}.to_http_str) {|conn| create_http_post_request(uri) }
+    	response = http_connect({:status => value, :source => @@config.source}.to_http_str) {|conn| create_http_post_request(uri) }
     when :delete
     	response = http_connect {|conn| create_http_delete_request(uri, :id => value.to_i) }
     end

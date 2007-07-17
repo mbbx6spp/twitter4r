@@ -30,6 +30,7 @@ module Twitter
       :application_name,
       :application_version,
       :application_url,
+      :source,
     ]
     attr_accessor *@@ATTRIBUTES
     
@@ -54,6 +55,7 @@ module Twitter
                    :application_name => 'Twitter4R',
                    :application_version => Twitter::Version.to_version,
                    :application_url => 'http://twitter4r.rubyforge.org',
+                   :source => 'twitter4r',
     }
     @@config = Twitter::Config.new(@@defaults)
 

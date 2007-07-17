@@ -11,6 +11,7 @@ describe Twitter::Client, "#status" do
     @connection = mas_net_http(@response)
     @float = 43.3434
     @status = Twitter::Status.new(:id => 2349343)
+    @source = Twitter::Client.class_eval("@@defaults[:source]")
   end
 
   it "should return nil if nil is passed as value argument for :get case" do
@@ -50,7 +51,7 @@ describe Twitter::Client, "#status" do
   
   it "should create expected HTTP POST request for :post case" do
     @twitter.should_receive(:create_http_post_request).with(@uris[:post]).and_return(@request)
-    @connection.should_receive(:request).with(@request, {:status => @message}.to_http_str).and_return(@response)
+    @connection.should_receive(:request).with(@request, {:status => @message, :source => @source}.to_http_str).and_return(@response)
     @twitter.status(:post, @message)
   end
   

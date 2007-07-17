@@ -2,6 +2,11 @@
 
 Catalog(ue) of changes for Twitter4R 0.1.x releases including Retrospectiva ticket cross-reference numbers.  Refer to http://retro.tautology.net/projects/twitter4r/tickets for more information.
 
+== 0.2.1 Changes
+
+=== 2007-07-17
+* Added 'source' feature and configurability.
+
 == 0.2.0 Changes
 
 === 2007-07-08

@@ -32,6 +32,12 @@ describe Twitter::Client, "#messages" do
     @twitter.messages(:sent)
   end
   
+  it "should raise an ArgumentError when giving an invalid messaging action" do
+    lambda {
+      @twitter.messages(:crap)
+    }.should raise_error(ArgumentError)
+  end
+  
   after(:each) do
     nilize(@twitter, @uris, @request, @response, @connection, @messages)
   end
@@ -85,6 +91,12 @@ describe Twitter::Client, "#message" do
   it "should invoke #to_i on message object passed in for :delete case" do
     @message.should_receive(:to_i).and_return(@message.id)
     @twitter.message(:delete, @message)
+  end
+  
+  it "should raise an ArgumentError when giving an invalid messaging action" do
+    lambda {
+      @twitter.message(:crap, @message)
+    }.should raise_error(ArgumentError)
   end
   
   after(:each) do

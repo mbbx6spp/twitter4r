@@ -13,7 +13,13 @@ class Twitter::Client
   # For example,
   #  @twitter.user(234943) #=> Twitter::User object instance for user with numeric id of 234943
   #  @twitter.user('mylogin') #=> Twitter::User object instance for user with screen name 'mylogin'
+  # 
+  # An <tt>ArgumentError</tt> will be raised if an invalid <tt>action</tt> 
+  # is given.  Valid actions are:
+  # * +:info+
+  # * +:friends+
   def user(id, action = :info)
+    raise ArgumentError, "Invalid user action: #{action}" unless [:info, :friends].member?(action)
   	response = http_connect {|conn| create_http_get_request(@@USER_URIS[action], :id => id) }
   	bless_models(Twitter::User.unmarshal(response.body))
   end
@@ -24,7 +30,14 @@ class Twitter::Client
   # * <tt>:info</tt> - Returns user instance for the authenticated user.
   # * <tt>:friends</tt> - Returns Array of users that are authenticated user's friends
   # * <tt>:followers</tt> - Returns Array of users that are authenticated user's followers
+  # 
+  # An <tt>ArgumentError</tt> will be raised if an invalid <tt>action</tt> 
+  # is given.  Valid actions are:
+  # * +:info+
+  # * +:friends+
+  # * +:followers+
   def my(action)
+    raise ArgumentError, "Invalid user action: #{action}" unless @@USER_URIS.keys.member?(action)
   	response = http_connect {|conn| create_http_get_request(@@USER_URIS[action], :id => @login) }
   	json = response.body
   	users = Twitter::User.unmarshal(json)

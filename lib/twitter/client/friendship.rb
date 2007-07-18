@@ -26,6 +26,7 @@ class Twitter::Client
 	#  client.friend(:add, user)
 	#  client.friend(:remove, user)
 	def friend(action, value)
+	  raise ArgumentError, "Invalid friend action provided: #{action}" unless @@FRIENDSHIP_URIS.keys.member?(action)
 		value = value.to_i unless value.is_a?(String)
 		uri = "#{@@FRIENDSHIP_URIS[action]}/#{value}.json"
 		response = http_connect {|conn| create_http_get_request(uri) }

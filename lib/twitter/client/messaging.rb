@@ -10,8 +10,15 @@ class Twitter::Client
   # Provides access to Twitter's Messaging API for received and 
   # sent direct messages.
   # 
+  # Example:
+  #  received_messages = @twitter.messages(:received)
   # 
+  # An <tt>ArgumentError</tt> will be raised if an invalid <tt>action</tt> 
+  # is given.  Valid actions are:
+  # * +:received+
+  # * +:sent+
   def messages(action)
+    raise ArgumentError, "Invalid messaging action: #{action}" unless [:sent, :received].member?(action)
     uri = @@MESSAGING_URIS[action]
   	response = http_connect {|conn|	create_http_get_request(uri) }
   	bless_models(Twitter::Message.unmarshal(response.body))
@@ -47,7 +54,13 @@ class Twitter::Client
   # In both scenarios (<tt>action</tt> is <tt>:post</tt> or 
   # <tt>:delete</tt>) a blessed <tt>Twitter::Message</tt> object is 
   # returned that represents the newly posted or newly deleted message.
+  # 
+  # An <tt>ArgumentError</tt> will be raised if an invalid <tt>action</tt> 
+  # is given.  Valid actions are:
+  # * +:post+
+  # * +:delete+
   def message(action, value, user = nil)
+    raise ArgumentError, "Invalid messaging action: #{action}" unless [:post, :delete].member?(action)
     uri = @@MESSAGING_URIS[action]
     case action
     when :post

@@ -8,6 +8,7 @@ Catalog(ue) of changes for Twitter4R 0.1.x releases including Retrospectiva tick
 * Fixed URI paths for user, messaging and friendship APIs (#25)
 * Added action checks for Twitter::Client methods: #user, #my, #message, #messages, #status, #timeline, #friend (#26)
 * Added 'source' configuration documentation. 
+* Added missing attributes for Twitter::User (#28)
 
 === 2007-07-17
 * Added 'source' feature and configurability.

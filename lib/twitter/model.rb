@@ -158,7 +158,7 @@ module Twitter
   # Represents a <tt>Twitter</tt> user
   class User
     include ModelMixin
-    @@ATTRIBUTES = [:id, :name, :description, :location, :screen_name, :url]
+    @@ATTRIBUTES = [:id, :name, :description, :location, :screen_name, :url, :profile_image_url, :protected]
     attr_accessor *@@ATTRIBUTES
 
     class << self

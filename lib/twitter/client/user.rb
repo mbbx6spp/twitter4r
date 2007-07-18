@@ -19,7 +19,7 @@ class Twitter::Client
   # * +:info+
   # * +:friends+
   def user(id, action = :info)
-    raise ArgumentError, "Invalid user action: #{action}" unless [:info, :friends].member?(action)
+    raise ArgumentError, "Invalid user action: #{action}" unless @@USER_URIS.member?(action)
   	response = http_connect {|conn| create_http_get_request(@@USER_URIS[action], :id => id) }
   	bless_models(Twitter::User.unmarshal(response.body))
   end

@@ -58,13 +58,14 @@ describe Twitter::Client, "#message" do
     @json = JSON.unparse(@attributes)
     @response = mas_net_http_response(:success, @json)
     @connection = mas_net_http(@response)
+    @source = Twitter::Client.class_eval("@@defaults[:source]")
 
     Net::HTTP.stub!(:new).and_return(@connection)
     Twitter::Message.stub!(:unmarshal).and_return(@message)
   end
   
   it "should invoke #http_connect with expected arguments for :post case" do
-  	@twitter.should_receive(:http_connect).with({:text => @message.text, :user => @message.recipient.to_i}.to_http_str).and_return(@response)
+  	@twitter.should_receive(:http_connect).with({:text => @message.text, :user => @message.recipient.to_i, :source => @source}.to_http_str).and_return(@response)
     @twitter.message(:post, @message.text, @message.recipient)
   end
   

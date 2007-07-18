@@ -1,8 +1,8 @@
 class Twitter::Client
   @@USER_URIS = {
-  	:info => 'http://twitter.com/users/show',
-  	:friends => 'http://twitter.com/statuses/friends.json',
-  	:followers => 'http://twitter.com/statuses/followers.json',
+  	:info => '/users/show',
+  	:friends => '/statuses/friends.json',
+  	:followers => '/statuses/followers.json',
   }
   
   # Provides access to Twitter's User APIs

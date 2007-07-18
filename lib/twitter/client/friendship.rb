@@ -1,7 +1,7 @@
 class Twitter::Client
 	@@FRIENDSHIP_URIS = {
-		:add => 'http://twitter.com/friendships/create',
-		:remove => 'http://twitter.com/friendships/destroy',
+		:add => '/friendships/create',
+		:remove => '/friendships/destroy',
 	}
 	
 	# Provides access to the Twitter Friendship API.

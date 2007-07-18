@@ -1,10 +1,10 @@
 class Twitter::Client
 
   @@MESSAGING_URIS = {
-    :received => 'http://twitter.com/direct_messages.json',
-    :sent => 'http://twitter.com/direct_messages/sent.json',
-    :post => 'http://twitter.com/direct_messages/new.json',
-    :delete => 'http://twitter.com/direct_messages/destroy',
+    :received => '/direct_messages.json',
+    :sent => '/direct_messages/sent.json',
+    :post => '/direct_messages/new.json',
+    :delete => '/direct_messages/destroy',
   }
 
   # Provides access to Twitter's Messaging API for received and 
@@ -51,7 +51,7 @@ class Twitter::Client
     uri = @@MESSAGING_URIS[action]
     case action
     when :post
-      response = http_connect({:text => value, :user => user.to_i, :source => @@config.source}.to_http_str) {|conn| create_http_post_request(uri) }
+      response = http_connect({:text => value, :user => user.to_i}.to_http_str) {|conn| create_http_post_request(uri) }
     when :delete
       response = http_connect {|conn| create_http_delete_request(uri, :id => value.to_i) }
     end

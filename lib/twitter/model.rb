@@ -132,7 +132,7 @@ module Twitter
       # Returns an Array of user objects that represents the authenticated
       # user's friends on Twitter.
       def followers
-        @client.user(@id, :followers)
+        @client.my(:followers)
       end
       
       # Adds given user as a friend.  Returns user object as given by 

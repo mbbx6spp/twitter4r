@@ -244,8 +244,8 @@ describe Twitter::User, "#followers" do
     @user.bless(@twitter)
   end
   
-  it "should delegate to @client.user(@id, :followers)" do
-    @twitter.should_receive(:user).with(@id, :followers)
+  it "should delegate to @client.my(:followers)" do
+    @twitter.should_receive(:my).with(:followers)
     @user.followers
   end
   

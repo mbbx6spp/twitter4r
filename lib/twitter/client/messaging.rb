@@ -64,7 +64,7 @@ class Twitter::Client
   # supplied when <tt>action</tt> is +:post+.
   def message(action, value, user = nil)
     raise ArgumentError, "Invalid messaging action: #{action}" unless [:post, :delete].member?(action)
-    raise ArgumentError, "User argument must be supplied for :post case" if action == :post and user.nil?
+    raise ArgumentError, "User argument must be supplied for :post case" if action.eql?(:post) and user.nil?
     uri = @@MESSAGING_URIS[action]
     user = user.to_i if user and user.is_a?(Twitter::User)
     case action

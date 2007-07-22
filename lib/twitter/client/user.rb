@@ -26,7 +26,8 @@ class Twitter::Client
   # OR
   #  followers = client.my(:info).followers
   def user(id, action = :info)
-    raise ArgumentError, "Invalid user action: #{action}" unless [:info, :friends].member?(action)
+    raise ArgumentError, "Invalid user action: #{action}" unless @@USER_URIS.keys.member?(action)
+    raise ArgumentError, "Unable to retrieve followers for user: #{id}" if action.eql?(:followers) and not id.eql?(@login)
     id = id.to_i if id.is_a?(Twitter::User)
   	response = http_connect {|conn| create_http_get_request(@@USER_URIS[action], :id => id) }
   	bless_models(Twitter::User.unmarshal(response.body))
@@ -47,8 +48,7 @@ class Twitter::Client
   def my(action)
     raise ArgumentError, "Invalid user action: #{action}" unless @@USER_URIS.keys.member?(action)
   	response = http_connect {|conn| create_http_get_request(@@USER_URIS[action], :id => @login) }
-  	json = response.body
-  	users = Twitter::User.unmarshal(json)
+  	users = Twitter::User.unmarshal(response.body)
   	bless_models(users)
   end
 end

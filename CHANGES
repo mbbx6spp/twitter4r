@@ -5,7 +5,7 @@ Catalog(ue) of changes for Twitter4R 0.1.x releases including Retrospectiva tick
 == 0.2.4 Changes
 
 === 2007-07-24
-* Fixed ActiveSupport +Time#to_s+ conflict such that integration with Rails is much less painful (#
+* Fixed ActiveSupport +Time#to_s+ conflict such that integration with Rails is much less painful (#34)
 
 == 0.2.3 Changes
 

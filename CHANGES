@@ -2,6 +2,11 @@
 
 Catalog(ue) of changes for Twitter4R 0.1.x releases including Retrospectiva ticket cross-reference numbers.  Refer to http://retro.tautology.net/projects/twitter4r/tickets for more information.
 
+== 0.2.5 Changes
+
+=== 2007-09-23
+* Added paging support as per Sergio Santos' request.
+
 == 0.2.4 Changes
 
 === 2007-07-24

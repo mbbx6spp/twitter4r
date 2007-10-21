@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  margin-bottom: 25px;
+  padding: 0;
+  background-color: #f6f6ff;
+  font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
+  font-size: 13px;
+  color: #333;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+a  {
+  color: #ec008c;
+  text-decoration: none;
+  font-weight: normal;
+  border-bottom: 2px solid transparent;
+  padding: 0.15em 0.3em;
+}
+a:hover {
+  border-bottom: 2px solid #ec008c;
+  color: #51baf6;
+}
+
+#page {
+  background-color: #f6f6ff;
+  width: 790px;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#content {
+  float: left;
+  background-color: white;
+  border: 3px solid #91eaf6;
+  border-top: none;
+  padding: 25px;
+  width: 550px;
+}
+
+#sidebar {
+  float: right;
+  width: 175px;
+}
+
+#footer {
+  clear: both;
+}
+
+#header {
+  padding-left: 75px;
+  padding-right: 30px;
+}
+
+#header {
+  background-image: url("../images/twitter4r.png");
+  background-repeat: no-repeat;
+  background-position: top left;
+  height: 64px;
+}
+#header h1, #header h2 {margin: 0}
+#header h2 {
+  color: #888;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+h4#twitter_me {
+  text-align: center;
+  font-weight: bolder;
+}
+
+#sidebar ul {
+  margin-left: 0;
+  padding-left: 0;
+}
+#sidebar ul h3 {
+  margin-top: 25px;
+  font-size: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+#sidebar li {
+  list-style-type: none;
+}
+#sidebar ul.links li {
+  margin-bottom: 5px;
+}
+
+#info, 
+#downloads,
+#examples, 
+#license,
+#contribute-code,
+#contribute-buzz,
+#contribute-funds {
+  clear: both;
+  padding: 0.25em 3em;
+}
+
+#ohloh {
+  text-align: center;
+  clear: both;
+}
+
+dl.scalable {
+	background: #eee url(../images/boxbg.gif) repeat;
+	margin: 0
+	padding: 0;
+	width: 28em;
+}
+
+dl.scalable dt {
+	background: transparent url(../images/top_left.gif) no-repeat top left;
+	color: #000;
+	margin: 0;
+	padding: 0
+}
+
+dl.scalable dt a {
+	background: transparent url(../images/top_right.gif) no-repeat top right;
+	display: block;
+	margin: 0;
+	padding: 1em 1.5em .2em 1.5em
+}
+
+dl.scalable dd {
+	background: transparent url(../images/bottom_left.gif) no-repeat bottom left;
+	margin: 0;
+	padding: 0
+}
+
+dl.scalable p {
+	background: transparent url(../images/bottom_right.gif) no-repeat bottom right;
+	margin: 0;
+	padding: 1.33em 1.5em 2.33em 1.5em
+}

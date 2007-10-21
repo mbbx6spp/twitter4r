@@ -1,0 +1,15 @@
+<h3>New tweet</h3>
+
+<%= render :partial => 'common/flash', :locals => {:flash => flash} -%>
+
+<% form_tag tweets_path do -%>
+  <fieldset>
+    <textarea name="text" cols="80" rows="5"></textarea>
+    <%= submit_tag "Tweet" -%>
+  </fieldset>
+<% end %>
+
+<div class="actionlinks">
+  <%= link_to 'Back to all my tweets', tweets_path -%>
+</div>
+

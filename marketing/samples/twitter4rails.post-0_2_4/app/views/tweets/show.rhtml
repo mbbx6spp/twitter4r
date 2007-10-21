@@ -1,0 +1,9 @@
+<h3>Tweet: <a href="http://twitter.com/<%= @tweet.user.screen_name -%>/statuses/<%= @tweet.id -%>"><%= h(@tweet.id) -%></a></h3>
+
+<%= render :partial => 'common/flash', :locals => {:flash => flash} -%>
+
+<%= render :partial => 'tweet', :locals => {:tweet => @tweet} -%>
+
+<div class="actionlinks">
+  <%= link_to 'Back to all my tweets', tweets_path %>
+</div>

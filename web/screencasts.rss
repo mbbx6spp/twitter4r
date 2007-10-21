@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+   <channel>
+      <title>Twitter4R Screencasts</title>
+      <link>http://twitter4r.rubyforge.org/screencasts/</link>
+      <description>List of screencasts for the Twitter4R open source Ruby project hosted by Rubyforge.</description>
+      <language>en-us</language>
+      <pubDate>Mon, 30 Jul 2007 20:00:00 GMT</pubDate>
+
+      <lastBuildDate>Mon, 30 Jul 2007 20:00:00 GMT</lastBuildDate>
+      <docs>http://twitter4r.rubyforge.org/screencasts.rss</docs>
+      <generator>Susan Potter</generator>
+<!--
+      <managingEditor></managingEditor>
+      <webMaster></webMaster>
+-->
+      <item>
+         <title>Twitter4R on Rails</title>
+         <link>http://twitter4r.rubyforge.org/screencasts/twitter4r_on_rails.m4v</link>
+         <description>Demonstration of how to integrate Twitter4R into Rails applications using the TweetApp reference app.</description>
+         <pubDate>Mon, 30 Jul 2007 20:00:00 GMT</pubDate>
+         <guid>http://twitter4r.rubyforge.org/screencasts/twitter4r_on_rails.m4v</guid>
+      </item>
+   </channel>
+</rss>

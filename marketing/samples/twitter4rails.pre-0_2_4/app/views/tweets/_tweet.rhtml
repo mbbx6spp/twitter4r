@@ -1,0 +1,8 @@
+<div class="tweet">
+  <div class="tweetbox">
+    <span id="text"><%= tweet.text -%></span>
+  </div>
+  <div class="tweetfooter">
+    Posted by <a href="http://twitter.com/<%= tweet.user.screen_name -%>" class="screen_name"><%= tweet.user.screen_name -%></a> <span class="created_at"><%= distance_of_time_in_words_to_now(tweet.created_at) -%> ago.  <a class="id" href="<%= tweet_path(tweet) -%>"><%= tweet.id -%></a></span>
+  </div>
+</div>

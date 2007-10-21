@@ -1,0 +1,14 @@
+<h2>My tweets</h2>
+
+<%= render :partial => 'common/flash', :locals => {:flash => flash} -%>
+
+<div class="timeline">
+<% for tweet in @tweets -%>
+  <%= render :partial => 'tweet', :locals => {:tweet => tweet} -%>
+  <%= link_to 'Delete tweet', tweet_path(tweet), :confirm => 'Are you sure you want to delete?', :method => :delete -%>
+<% end -%>
+</div>
+
+<div class="actionlinks">
+  <%= link_to 'New tweet', new_tweet_path -%>
+</div>

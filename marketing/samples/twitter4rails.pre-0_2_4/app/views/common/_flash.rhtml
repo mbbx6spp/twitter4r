@@ -1,0 +1,9 @@
+<% flash.keys.each do |type| -%>
+<div class="flash" id="<%= type -%>">
+  <%= flash[type] -%>
+</div>
+<% end -%>
+<!-- Check for existence of @error -->
+<% if defined?(@error) -%>
+  <%= render :partial => 'common/error', :locals => {:error => @error} -%>
+<% end -%>

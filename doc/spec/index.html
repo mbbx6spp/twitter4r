@@ -289,204 +289,56 @@ a {
 <div class="behaviour">
   <dl>
   <dt id="behaviour_12">Twitter::User.find</dt>
-    <script type="text/javascript">makeRed('rspec-header');</script>
-    <script type="text/javascript">makeRed('behaviour_12');</script>
     <script type="text/javascript">moveProgressBar('16.5');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should invoke given Twitter::Client's #user method with expected arguments</span>
-      <div class="failure" id="failure_1">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/model_spec.rb:111:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should invoke given Twitter::Client's #user method with expected arguments</span></dd>
   </dl>
 </div>
 <div class="behaviour">
   <dl>
   <dt id="behaviour_13">Twitter::Status.find</dt>
-    <script type="text/javascript">makeRed('behaviour_13');</script>
     <script type="text/javascript">moveProgressBar('17.1');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should invoke given Twitter::Client's #status method with expected arguments</span>
-      <div class="failure" id="failure_2">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/model_spec.rb:136:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should invoke given Twitter::Client's #status method with expected arguments</span></dd>
   </dl>
 </div>
 <div class="behaviour">
   <dl>
   <dt id="behaviour_14">Test::Model#bless</dt>
-    <script type="text/javascript">makeRed('behaviour_14');</script>
     <script type="text/javascript">moveProgressBar('17.7');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should delegate to #basic_bless</span>
-      <div class="failure" id="failure_3">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/model_spec.rb:156:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should delegate to #basic_bless</span></dd>
     <script type="text/javascript">moveProgressBar('18.3');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should set client attribute of self</span>
-      <div class="failure" id="failure_4">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/model_spec.rb:156:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should set client attribute of self</span></dd>
   </dl>
 </div>
 <div class="behaviour">
   <dl>
   <dt id="behaviour_15">Twitter::User#is_me?</dt>
-    <script type="text/javascript">makeRed('behaviour_15');</script>
     <script type="text/javascript">moveProgressBar('18.9');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should return true when Twitter::User object represents authenticated user of client context</span>
-      <div class="failure" id="failure_5">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/model_spec.rb:177:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should return true when Twitter::User object represents authenticated user of client context</span></dd>
     <script type="text/javascript">moveProgressBar('19.5');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should return false when Twitter::User object does not represent authenticated user of client context</span>
-      <div class="failure" id="failure_6">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/model_spec.rb:177:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should return false when Twitter::User object does not represent authenticated user of client context</span></dd>
   </dl>
 </div>
 <div class="behaviour">
   <dl>
   <dt id="behaviour_16">Twitter::User#bless(client)</dt>
-    <script type="text/javascript">makeRed('behaviour_16');</script>
     <script type="text/javascript">moveProgressBar('20.1');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should add a followers method</span>
-      <div class="failure" id="failure_7">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/model_spec.rb:199:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should add a followers method</span></dd>
     <script type="text/javascript">moveProgressBar('20.7');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should not add a followers method</span>
-      <div class="failure" id="failure_8">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/model_spec.rb:199:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should not add a followers method</span></dd>
   </dl>
 </div>
 <div class="behaviour">
   <dl>
   <dt id="behaviour_17">Twitter::User#friends</dt>
-    <script type="text/javascript">makeRed('behaviour_17');</script>
     <script type="text/javascript">moveProgressBar('21.3');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should delegate to @client.user(@id, :friends)</span>
-      <div class="failure" id="failure_9">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/model_spec.rb:223:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should delegate to @client.user(@id, :friends)</span></dd>
   </dl>
 </div>
 <div class="behaviour">
   <dl>
   <dt id="behaviour_18">Twitter::User#followers</dt>
-    <script type="text/javascript">makeRed('behaviour_18');</script>
     <script type="text/javascript">moveProgressBar('21.8');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should delegate to @client.my(:followers)</span>
-      <div class="failure" id="failure_10">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/model_spec.rb:241:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should delegate to @client.my(:followers)</span></dd>
   </dl>
 </div>
 <div class="behaviour">
@@ -513,263 +365,49 @@ a {
 <div class="behaviour">
   <dl>
   <dt id="behaviour_22">Twitter::Status.create</dt>
-    <script type="text/javascript">makeRed('behaviour_22');</script>
     <script type="text/javascript">moveProgressBar('24.2');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should invoke #status(:post, text) on client context given</span>
-      <div class="failure" id="failure_11">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/model_spec.rb:303:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should invoke #status(:post, text) on client context given</span></dd>
     <script type="text/javascript">moveProgressBar('24.8');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should raise an ArgumentError when no client is given in params</span>
-      <div class="failure" id="failure_12">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/model_spec.rb:303:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should raise an ArgumentError when no client is given in params</span></dd>
     <script type="text/javascript">moveProgressBar('25.4');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should raise an ArgumentError when no text is given in params</span>
-      <div class="failure" id="failure_13">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/model_spec.rb:303:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should raise an ArgumentError when no text is given in params</span></dd>
     <script type="text/javascript">moveProgressBar('26.0');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should raise an ArgumentError when text given in params is not a String</span>
-      <div class="failure" id="failure_14">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/model_spec.rb:303:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should raise an ArgumentError when text given in params is not a String</span></dd>
     <script type="text/javascript">moveProgressBar('26.6');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should raise an ArgumentError when client context given in params is not a Twitter::Client object</span>
-      <div class="failure" id="failure_15">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/model_spec.rb:303:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should raise an ArgumentError when client context given in params is not a Twitter::Client object</span></dd>
   </dl>
 </div>
 <div class="behaviour">
   <dl>
   <dt id="behaviour_23">Twitter::Message.create</dt>
-    <script type="text/javascript">makeRed('behaviour_23');</script>
     <script type="text/javascript">moveProgressBar('27.2');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should invoke #message(:post, text, recipient) on client context given</span>
-      <div class="failure" id="failure_16">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/model_spec.rb:345:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should invoke #message(:post, text, recipient) on client context given</span></dd>
     <script type="text/javascript">moveProgressBar('27.8');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should raise an ArgumentError if no client context is given in params</span>
-      <div class="failure" id="failure_17">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/model_spec.rb:345:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should raise an ArgumentError if no client context is given in params</span></dd>
     <script type="text/javascript">moveProgressBar('28.4');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should raise an ArgumentError if client conext given in params is not a Twitter::Client object</span>
-      <div class="failure" id="failure_18">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/model_spec.rb:345:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should raise an ArgumentError if client conext given in params is not a Twitter::Client object</span></dd>
     <script type="text/javascript">moveProgressBar('28.9');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should raise an ArgumentError if no text is given in params</span>
-      <div class="failure" id="failure_19">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/model_spec.rb:345:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should raise an ArgumentError if no text is given in params</span></dd>
     <script type="text/javascript">moveProgressBar('29.5');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should raise an ArgumentError if text given in params is not a String</span>
-      <div class="failure" id="failure_20">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/model_spec.rb:345:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should raise an ArgumentError if text given in params is not a String</span></dd>
     <script type="text/javascript">moveProgressBar('30.1');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should raise an ArgumentError if no recipient is given in params</span>
-      <div class="failure" id="failure_21">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/model_spec.rb:345:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should raise an ArgumentError if no recipient is given in params</span></dd>
     <script type="text/javascript">moveProgressBar('30.7');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should raise an ArgumentError if recipient given in params is not a Twitter::User, Integer or String object</span>
-      <div class="failure" id="failure_22">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/model_spec.rb:345:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should raise an ArgumentError if recipient given in params is not a Twitter::User, Integer or String object</span></dd>
   </dl>
 </div>
 <div class="behaviour">
   <dl>
   <dt id="behaviour_24">Twitter::User#befriend</dt>
-    <script type="text/javascript">makeRed('behaviour_24');</script>
     <script type="text/javascript">moveProgressBar('31.3');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should invoke #friend(:add, user) on client context</span>
-      <div class="failure" id="failure_23">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/model_spec.rb:416:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should invoke #friend(:add, user) on client context</span></dd>
   </dl>
 </div>
 <div class="behaviour">
   <dl>
   <dt id="behaviour_25">Twitter::User#defriend</dt>
-    <script type="text/javascript">makeRed('behaviour_25');</script>
     <script type="text/javascript">moveProgressBar('31.9');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should invoke #friend(:remove, user) on client context</span>
-      <div class="failure" id="failure_24">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/model_spec.rb:439:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should invoke #friend(:remove, user) on client context</span></dd>
   </dl>
 </div>
 <div class="behaviour">
@@ -789,1013 +427,163 @@ a {
 <div class="behaviour">
   <dl>
   <dt id="behaviour_28">Twitter::Client#status</dt>
-    <script type="text/javascript">makeRed('behaviour_28');</script>
     <script type="text/javascript">moveProgressBar('33.7');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should return nil if nil is passed as value argument for :get case</span>
-      <div class="failure" id="failure_25">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/status_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should return nil if nil is passed as value argument for :get case</span></dd>
     <script type="text/javascript">moveProgressBar('34.3');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should not call @twitter#http_connect when passing nil for value argument in :get case</span>
-      <div class="failure" id="failure_26">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/status_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should not call @twitter#http_connect when passing nil for value argument in :get case</span></dd>
     <script type="text/javascript">moveProgressBar('34.9');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should create expected HTTP GET request for :get case</span>
-      <div class="failure" id="failure_27">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/status_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should create expected HTTP GET request for :get case</span></dd>
     <script type="text/javascript">moveProgressBar('35.5');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should invoke @twitter#create_http_get_request with given parameters equivalent to {:id =&gt; value.to_i} for :get case</span>
-      <div class="failure" id="failure_28">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/status_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should invoke @twitter#create_http_get_request with given parameters equivalent to {:id =&gt; value.to_i} for :get case</span></dd>
     <script type="text/javascript">moveProgressBar('36.0');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should return nil if nil is passed as value argument for :post case</span>
-      <div class="failure" id="failure_29">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/status_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should return nil if nil is passed as value argument for :post case</span></dd>
     <script type="text/javascript">moveProgressBar('36.6');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should not call @twitter#http_connect when passing nil for value argument in :post case</span>
-      <div class="failure" id="failure_30">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/status_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should not call @twitter#http_connect when passing nil for value argument in :post case</span></dd>
     <script type="text/javascript">moveProgressBar('37.2');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should create expected HTTP POST request for :post case</span>
-      <div class="failure" id="failure_31">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/status_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should create expected HTTP POST request for :post case</span></dd>
     <script type="text/javascript">moveProgressBar('37.8');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should return nil if nil is passed as value argument for :delete case</span>
-      <div class="failure" id="failure_32">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/status_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should return nil if nil is passed as value argument for :delete case</span></dd>
     <script type="text/javascript">moveProgressBar('38.4');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should not call @twitter#http_connect when passing nil for value argument in :delete case</span>
-      <div class="failure" id="failure_33">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/status_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should not call @twitter#http_connect when passing nil for value argument in :delete case</span></dd>
     <script type="text/javascript">moveProgressBar('39.0');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should create expected HTTP DELETE request for :delete case</span>
-      <div class="failure" id="failure_34">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/status_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should create expected HTTP DELETE request for :delete case</span></dd>
     <script type="text/javascript">moveProgressBar('39.6');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should invoke @twitter#create_http_get_request with given parameters equivalent to {:id =&gt; value.to_i} for :delete case</span>
-      <div class="failure" id="failure_35">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/status_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should invoke @twitter#create_http_get_request with given parameters equivalent to {:id =&gt; value.to_i} for :delete case</span></dd>
     <script type="text/javascript">moveProgressBar('40.2');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should raise an ArgumentError when given an invalid status action</span>
-      <div class="failure" id="failure_36">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/status_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should raise an ArgumentError when given an invalid status action</span></dd>
   </dl>
 </div>
 <div class="behaviour">
   <dl>
   <dt id="behaviour_29">Twitter::Client Timeline API</dt>
-    <script type="text/javascript">makeRed('behaviour_29');</script>
     <script type="text/javascript">moveProgressBar('40.8');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should respond to instance method #timeline_for</span>
-      <div class="failure" id="failure_37">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/timeline_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should respond to instance method #timeline_for</span></dd>
     <script type="text/javascript">moveProgressBar('41.4');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should call #http_get with expected parameters for :public case</span>
-      <div class="failure" id="failure_38">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/timeline_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should call #http_get with expected parameters for :public case</span></dd>
     <script type="text/javascript">moveProgressBar('42.0');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should yield to block for each status in timeline</span>
-      <div class="failure" id="failure_39">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/timeline_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should yield to block for each status in timeline</span></dd>
     <script type="text/javascript">moveProgressBar('42.6');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should generate expected HTTP GET request for generic :public case</span>
-      <div class="failure" id="failure_40">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/timeline_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should generate expected HTTP GET request for generic :public case</span></dd>
     <script type="text/javascript">moveProgressBar('43.1');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should generate expected HTTP GET request for :public case with expected parameters</span>
-      <div class="failure" id="failure_41">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/timeline_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should generate expected HTTP GET request for :public case with expected parameters</span></dd>
     <script type="text/javascript">moveProgressBar('43.7');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should generate expected HTTP GET request for generic :friends case</span>
-      <div class="failure" id="failure_42">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/timeline_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should generate expected HTTP GET request for generic :friends case</span></dd>
     <script type="text/javascript">moveProgressBar('44.3');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should generate expected HTTP GET request for :friends case with expected parameters</span>
-      <div class="failure" id="failure_43">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/timeline_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should generate expected HTTP GET request for :friends case with expected parameters</span></dd>
     <script type="text/javascript">moveProgressBar('44.9');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should raise an ArgumentError if type given is not valid</span>
-      <div class="failure" id="failure_44">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/timeline_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should raise an ArgumentError if type given is not valid</span></dd>
   </dl>
 </div>
 <div class="behaviour">
   <dl>
   <dt id="behaviour_30">Twitter::Client#user(id, :followers)</dt>
-    <script type="text/javascript">makeRed('behaviour_30');</script>
     <script type="text/javascript">moveProgressBar('45.5');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should raise ArgumentError</span>
-      <div class="failure" id="failure_45">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/user_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should raise ArgumentError</span></dd>
   </dl>
 </div>
 <div class="behaviour">
   <dl>
   <dt id="behaviour_31">Twitter::Client#user(id, :info)</dt>
-    <script type="text/javascript">makeRed('behaviour_31');</script>
     <script type="text/javascript">moveProgressBar('46.1');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should create expected HTTP GET request when giving numeric user id</span>
-      <div class="failure" id="failure_46">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/user_spec.rb:22:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should create expected HTTP GET request when giving numeric user id</span></dd>
     <script type="text/javascript">moveProgressBar('46.7');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should create expected HTTP GET request when giving screen name</span>
-      <div class="failure" id="failure_47">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/user_spec.rb:22:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should create expected HTTP GET request when giving screen name</span></dd>
     <script type="text/javascript">moveProgressBar('47.3');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should bless model returned when giving numeric user id</span>
-      <div class="failure" id="failure_48">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/user_spec.rb:22:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should bless model returned when giving numeric user id</span></dd>
     <script type="text/javascript">moveProgressBar('47.9');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should bless model returned when giving screen name</span>
-      <div class="failure" id="failure_49">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/user_spec.rb:22:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should bless model returned when giving screen name</span></dd>
   </dl>
 </div>
 <div class="behaviour">
   <dl>
   <dt id="behaviour_32">Twitter::Client#user(id, :friends)</dt>
-    <script type="text/javascript">makeRed('behaviour_32');</script>
     <script type="text/javascript">moveProgressBar('48.5');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should create expected HTTP GET request when giving numeric user id</span>
-      <div class="failure" id="failure_50">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/user_spec.rb:69:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should create expected HTTP GET request when giving numeric user id</span></dd>
     <script type="text/javascript">moveProgressBar('49.1');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should invoke #to_i on Twitter::User objecct given</span>
-      <div class="failure" id="failure_51">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/user_spec.rb:69:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should invoke #to_i on Twitter::User objecct given</span></dd>
     <script type="text/javascript">moveProgressBar('49.7');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should create expected HTTP GET request when giving Twitter::User object</span>
-      <div class="failure" id="failure_52">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/user_spec.rb:69:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should create expected HTTP GET request when giving Twitter::User object</span></dd>
     <script type="text/javascript">moveProgressBar('50.2');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should create expected HTTP GET request when giving screen name</span>
-      <div class="failure" id="failure_53">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/user_spec.rb:69:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should create expected HTTP GET request when giving screen name</span></dd>
     <script type="text/javascript">moveProgressBar('50.8');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should bless model returned when giving numeric id</span>
-      <div class="failure" id="failure_54">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/user_spec.rb:69:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should bless model returned when giving numeric id</span></dd>
     <script type="text/javascript">moveProgressBar('51.4');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should bless model returned when giving Twitter::User object</span>
-      <div class="failure" id="failure_55">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/user_spec.rb:69:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should bless model returned when giving Twitter::User object</span></dd>
     <script type="text/javascript">moveProgressBar('52.0');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should bless model returned when giving screen name</span>
-      <div class="failure" id="failure_56">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/user_spec.rb:69:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should bless model returned when giving screen name</span></dd>
   </dl>
 </div>
 <div class="behaviour">
   <dl>
   <dt id="behaviour_33">Twitter::Client#my(:info)</dt>
-    <script type="text/javascript">makeRed('behaviour_33');</script>
     <script type="text/javascript">moveProgressBar('52.6');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should create expected HTTP GET request</span>
-      <div class="failure" id="failure_57">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/user_spec.rb:129:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should create expected HTTP GET request</span></dd>
     <script type="text/javascript">moveProgressBar('53.2');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should bless the model object returned</span>
-      <div class="failure" id="failure_58">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/user_spec.rb:129:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should bless the model object returned</span></dd>
     <script type="text/javascript">moveProgressBar('53.8');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should return expected user object</span>
-      <div class="failure" id="failure_59">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/user_spec.rb:129:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should return expected user object</span></dd>
   </dl>
 </div>
 <div class="behaviour">
   <dl>
   <dt id="behaviour_34">Twitter::Client#my(:friends)</dt>
-    <script type="text/javascript">makeRed('behaviour_34');</script>
     <script type="text/javascript">moveProgressBar('54.4');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should create expected HTTP GET request</span>
-      <div class="failure" id="failure_60">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/user_spec.rb:168:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should create expected HTTP GET request</span></dd>
     <script type="text/javascript">moveProgressBar('55.0');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should bless models returned</span>
-      <div class="failure" id="failure_61">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/user_spec.rb:168:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should bless models returned</span></dd>
     <script type="text/javascript">moveProgressBar('55.6');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should return expected Array of friends</span>
-      <div class="failure" id="failure_62">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/user_spec.rb:168:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should return expected Array of friends</span></dd>
   </dl>
 </div>
 <div class="behaviour">
   <dl>
   <dt id="behaviour_35">Twitter::Client#my(:invalid_action)</dt>
-    <script type="text/javascript">makeRed('behaviour_35');</script>
     <script type="text/javascript">moveProgressBar('56.2');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should raise ArgumentError for invalid user action</span>
-      <div class="failure" id="failure_63">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/user_spec.rb:208:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should raise ArgumentError for invalid user action</span></dd>
   </dl>
 </div>
 <div class="behaviour">
   <dl>
   <dt id="behaviour_36">Twitter::Client#messages</dt>
-    <script type="text/javascript">makeRed('behaviour_36');</script>
     <script type="text/javascript">moveProgressBar('56.8');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should create expected HTTP GET request for :received case</span>
-      <div class="failure" id="failure_64">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/messaging_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should create expected HTTP GET request for :received case</span></dd>
     <script type="text/javascript">moveProgressBar('57.3');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should bless the Array returned from Twitter for :received case</span>
-      <div class="failure" id="failure_65">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/messaging_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should bless the Array returned from Twitter for :received case</span></dd>
     <script type="text/javascript">moveProgressBar('57.9');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should create expected HTTP GET request for :sent case</span>
-      <div class="failure" id="failure_66">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/messaging_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should create expected HTTP GET request for :sent case</span></dd>
     <script type="text/javascript">moveProgressBar('58.5');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should bless the Array returned from Twitter for :sent case</span>
-      <div class="failure" id="failure_67">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/messaging_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should bless the Array returned from Twitter for :sent case</span></dd>
     <script type="text/javascript">moveProgressBar('59.1');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should raise an ArgumentError when giving an invalid messaging action</span>
-      <div class="failure" id="failure_68">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/messaging_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should raise an ArgumentError when giving an invalid messaging action</span></dd>
     <script type="text/javascript">moveProgressBar('59.7');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should accept an options Hash for paging</span>
-      <div class="failure" id="failure_69">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/messaging_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should accept an options Hash for paging</span></dd>
     <script type="text/javascript">moveProgressBar('60.3');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should generate expected GET HTTP request for paging case</span>
-      <div class="failure" id="failure_70">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/messaging_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should generate expected GET HTTP request for paging case</span></dd>
     <script type="text/javascript">moveProgressBar('60.9');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should bless models for paging case</span>
-      <div class="failure" id="failure_71">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/messaging_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should bless models for paging case</span></dd>
   </dl>
 </div>
 <div class="behaviour">
   <dl>
   <dt id="behaviour_37">Twitter::Client#message</dt>
-    <script type="text/javascript">makeRed('behaviour_37');</script>
     <script type="text/javascript">moveProgressBar('61.5');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should invoke #http_connect with expected arguments for :post case</span>
-      <div class="failure" id="failure_72">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/messaging_spec.rb:65:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should invoke #http_connect with expected arguments for :post case</span></dd>
     <script type="text/javascript">moveProgressBar('62.1');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should create expected HTTP POST request for :post case</span>
-      <div class="failure" id="failure_73">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/messaging_spec.rb:65:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should create expected HTTP POST request for :post case</span></dd>
     <script type="text/javascript">moveProgressBar('62.7');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should bless returned Twitter::Message object for :post case</span>
-      <div class="failure" id="failure_74">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/messaging_spec.rb:65:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should bless returned Twitter::Message object for :post case</span></dd>
     <script type="text/javascript">moveProgressBar('63.3');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should create expected HTTP DELETE request for :delete case</span>
-      <div class="failure" id="failure_75">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/messaging_spec.rb:65:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should create expected HTTP DELETE request for :delete case</span></dd>
     <script type="text/javascript">moveProgressBar('63.9');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should bless returned Twitter::Message object for :delete case</span>
-      <div class="failure" id="failure_76">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/messaging_spec.rb:65:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should bless returned Twitter::Message object for :delete case</span></dd>
     <script type="text/javascript">moveProgressBar('64.4');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should invoke #to_i on message object passed in for :delete case</span>
-      <div class="failure" id="failure_77">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/messaging_spec.rb:65:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should invoke #to_i on message object passed in for :delete case</span></dd>
     <script type="text/javascript">moveProgressBar('65.0');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should raise an ArgumentError when giving an invalid messaging action</span>
-      <div class="failure" id="failure_78">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/messaging_spec.rb:65:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should raise an ArgumentError when giving an invalid messaging action</span></dd>
     <script type="text/javascript">moveProgressBar('65.6');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should raise an ArgumentError for :post case if user argument is not supplied</span>
-      <div class="failure" id="failure_79">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/messaging_spec.rb:65:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should raise an ArgumentError for :post case if user argument is not supplied</span></dd>
     <script type="text/javascript">moveProgressBar('66.2');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should raise an ArgumentError for :post case if user argument is nil</span>
-      <div class="failure" id="failure_80">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/messaging_spec.rb:65:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should raise an ArgumentError for :post case if user argument is nil</span></dd>
   </dl>
 </div>
 <div class="behaviour">
@@ -1808,457 +596,89 @@ a {
 <div class="behaviour">
   <dl>
   <dt id="behaviour_39">Twitter::Client#http_header</dt>
-    <script type="text/javascript">makeRed('behaviour_39');</script>
     <script type="text/javascript">moveProgressBar('67.4');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should always return expected HTTP headers</span>
-      <div class="failure" id="failure_81">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/base_spec.rb:37:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should always return expected HTTP headers</span></dd>
     <script type="text/javascript">moveProgressBar('68.0');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should cache HTTP headers Hash in class variable after first invocation</span>
-      <div class="failure" id="failure_82">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/base_spec.rb:37:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should cache HTTP headers Hash in class variable after first invocation</span></dd>
   </dl>
 </div>
 <div class="behaviour">
   <dl>
   <dt id="behaviour_40">Twitter::Client#create_http_get_request</dt>
-    <script type="text/javascript">makeRed('behaviour_40');</script>
     <script type="text/javascript">moveProgressBar('68.6');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should create new Net::HTTP::Get object with expected initialization arguments</span>
-      <div class="failure" id="failure_83">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/base_spec.rb:65:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should create new Net::HTTP::Get object with expected initialization arguments</span></dd>
   </dl>
 </div>
 <div class="behaviour">
   <dl>
   <dt id="behaviour_41">Twitter::Client#create_http_post_request</dt>
-    <script type="text/javascript">makeRed('behaviour_41');</script>
     <script type="text/javascript">moveProgressBar('69.2');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should create new Net::HTTP::Post object with expected initialization arguments</span>
-      <div class="failure" id="failure_84">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/base_spec.rb:83:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should create new Net::HTTP::Post object with expected initialization arguments</span></dd>
   </dl>
 </div>
 <div class="behaviour">
   <dl>
   <dt id="behaviour_42">Twitter::Client#create_http_delete_request</dt>
-    <script type="text/javascript">makeRed('behaviour_42');</script>
     <script type="text/javascript">moveProgressBar('69.8');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should create new Net::HTTP::Delete object with expected initialization arguments</span>
-      <div class="failure" id="failure_85">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/base_spec.rb:101:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should create new Net::HTTP::Delete object with expected initialization arguments</span></dd>
   </dl>
 </div>
 <div class="behaviour">
   <dl>
   <dt id="behaviour_43">Twitter::Client#http_connect</dt>
-    <script type="text/javascript">makeRed('behaviour_43');</script>
     <script type="text/javascript">moveProgressBar('70.4');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should yield HTTP connection when response is good</span>
-      <div class="failure" id="failure_86">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/base_spec.rb:126:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should yield HTTP connection when response is good</span></dd>
     <script type="text/javascript">moveProgressBar('71.0');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should yield HTTP connection when response is bad</span>
-      <div class="failure" id="failure_87">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/base_spec.rb:126:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should yield HTTP connection when response is bad</span></dd>
   </dl>
 </div>
 <div class="behaviour">
   <dl>
   <dt id="behaviour_44">Twitter::Client#bless_model</dt>
-    <script type="text/javascript">makeRed('behaviour_44');</script>
     <script type="text/javascript">moveProgressBar('71.5');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should recieve #client= message on given model to self</span>
-      <div class="failure" id="failure_88">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/base_spec.rb:165:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should recieve #client= message on given model to self</span></dd>
     <script type="text/javascript">moveProgressBar('72.1');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should set client attribute on given model to self</span>
-      <div class="failure" id="failure_89">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/base_spec.rb:165:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should set client attribute on given model to self</span></dd>
     <script type="text/javascript">moveProgressBar('72.7');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should return nil when receiving nil and not raise any exceptions</span>
-      <div class="failure" id="failure_90">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/base_spec.rb:165:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should return nil when receiving nil and not raise any exceptions</span></dd>
     <script type="text/javascript">moveProgressBar('73.3');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should raise an error if passing in a non-nil object that doesn't not respond to the :client= message</span>
-      <div class="failure" id="failure_91">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/base_spec.rb:165:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should raise an error if passing in a non-nil object that doesn't not respond to the :client= message</span></dd>
   </dl>
 </div>
 <div class="behaviour">
   <dl>
   <dt id="behaviour_45">Twitter::Client#bless_models</dt>
-    <script type="text/javascript">makeRed('behaviour_45');</script>
     <script type="text/javascript">moveProgressBar('73.9');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should set client attributes for each model in given Array to self</span>
-      <div class="failure" id="failure_92">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/base_spec.rb:199:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should set client attributes for each model in given Array to self</span></dd>
     <script type="text/javascript">moveProgressBar('74.5');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should set client attribute for singular model given to self</span>
-      <div class="failure" id="failure_93">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/base_spec.rb:199:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should set client attribute for singular model given to self</span></dd>
     <script type="text/javascript">moveProgressBar('75.1');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should delegate to bless_model for singular model case</span>
-      <div class="failure" id="failure_94">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/base_spec.rb:199:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should delegate to bless_model for singular model case</span></dd>
     <script type="text/javascript">moveProgressBar('75.7');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should return nil when receiving nil and not raise any exceptions</span>
-      <div class="failure" id="failure_95">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/base_spec.rb:199:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should return nil when receiving nil and not raise any exceptions</span></dd>
   </dl>
 </div>
 <div class="behaviour">
   <dl>
   <dt id="behaviour_46">Twitter::Client#friend</dt>
-    <script type="text/javascript">makeRed('behaviour_46');</script>
     <script type="text/javascript">moveProgressBar('76.3');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should create expected HTTP GET request for :add case using integer user ID</span>
-      <div class="failure" id="failure_96">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/friendship_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should create expected HTTP GET request for :add case using integer user ID</span></dd>
     <script type="text/javascript">moveProgressBar('76.9');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should create expected HTTP GET request for :add case using screen name</span>
-      <div class="failure" id="failure_97">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/friendship_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should create expected HTTP GET request for :add case using screen name</span></dd>
     <script type="text/javascript">moveProgressBar('77.5');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should create expected HTTP GET request for :add case using Twitter::User object</span>
-      <div class="failure" id="failure_98">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/friendship_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should create expected HTTP GET request for :add case using Twitter::User object</span></dd>
     <script type="text/javascript">moveProgressBar('78.1');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should create expected HTTP GET request for :remove case using integer user ID</span>
-      <div class="failure" id="failure_99">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/friendship_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should create expected HTTP GET request for :remove case using integer user ID</span></dd>
     <script type="text/javascript">moveProgressBar('78.6');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should create expected HTTP GET request for :remove case using screen name</span>
-      <div class="failure" id="failure_100">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/friendship_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should create expected HTTP GET request for :remove case using screen name</span></dd>
     <script type="text/javascript">moveProgressBar('79.2');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should create expected HTTP GET request for :remove case using Twitter::User object</span>
-      <div class="failure" id="failure_101">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/friendship_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should create expected HTTP GET request for :remove case using Twitter::User object</span></dd>
     <script type="text/javascript">moveProgressBar('79.8');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should bless user model returned for :add case</span>
-      <div class="failure" id="failure_102">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/friendship_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should bless user model returned for :add case</span></dd>
     <script type="text/javascript">moveProgressBar('80.4');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should bless user model returned for :remove case</span>
-      <div class="failure" id="failure_103">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/friendship_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should bless user model returned for :remove case</span></dd>
     <script type="text/javascript">moveProgressBar('81.0');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should raise ArgumentError if action given is not valid</span>
-      <div class="failure" id="failure_104">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/client/friendship_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should raise ArgumentError if action given is not valid</span></dd>
   </dl>
 </div>
 <div class="behaviour">
@@ -2366,64 +786,17 @@ a {
 <div class="behaviour">
   <dl>
   <dt id="behaviour_57">Twitter::Client#featured(:users)</dt>
-    <script type="text/javascript">makeRed('behaviour_57');</script>
     <script type="text/javascript">moveProgressBar('97.0');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should create expected HTTP GET request</span>
-      <div class="failure" id="failure_105">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/extras_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should create expected HTTP GET request</span></dd>
     <script type="text/javascript">moveProgressBar('97.6');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should bless Twitter::User models returned</span>
-      <div class="failure" id="failure_106">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/extras_spec.rb:5:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should bless Twitter::User models returned</span></dd>
   </dl>
 </div>
 <div class="behaviour">
   <dl>
   <dt id="behaviour_58">Twitter::User.featured</dt>
-    <script type="text/javascript">makeRed('behaviour_58');</script>
     <script type="text/javascript">moveProgressBar('98.2');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should delegate #featured(:users) message to given client context</span>
-      <div class="failure" id="failure_107">
-        <div class="message"><pre>No such file or directory - config/twitter.yml</pre></div>
-        <div class="backtrace"><pre>/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `read'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../../lib/twitter/console.rb:23:in `from_config'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/ext/../../spec_helper.rb:31:in `client_context'
-/home/supo/Code/Personal/Twitter4R.git/tasks/../spec/twitter/extras_spec.rb:35:</pre></div>
-    <pre class="ruby"><code><span class="linenum">21</span>      #  twitter = Twitter::Client.from_config('config/twitter.yml')
-<span class="linenum">22</span>      def from_config(config_file, env = 'test')
-<span class="offending"><span class="linenum">23</span>        yaml_hash = YAML.load(File.read(config_file))</span>
-<span class="linenum">24</span>        self.new yaml_hash[env]
-<span class="linenum">25</span>      end
-<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <dd class="spec passed"><span class="passed_spec_name">should delegate #featured(:users) message to given client context</span></dd>
   </dl>
 </div>
 <div class="behaviour">
@@ -2442,8 +815,8 @@ a {
     <dd class="spec passed"><span class="passed_spec_name">should respond to #old_to_s</span></dd>
   </dl>
 </div>
-<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>3.831129 seconds</strong>";</script>
-<script type="text/javascript">document.getElementById('totals').innerHTML = "169 examples, 107 failures";</script>
+<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>2.43904 seconds</strong>";</script>
+<script type="text/javascript">document.getElementById('totals').innerHTML = "169 examples, 0 failures";</script>
 </div>
 </div>
 </body>

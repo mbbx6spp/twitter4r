@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>File: CHANGES</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+    <script language="JavaScript" type="text/javascript">
+    // <![CDATA[
+
+        function toggleSource( id )
+        {
+          var elem
+          var link
+
+          if( document.getElementById )
+          {
+            elem = document.getElementById( id )
+            link = document.getElementById( "l_" + id )
+          }
+          else if ( document.all )
+          {
+            elem = eval( "document.all." + id )
+            link = eval( "document.all.l_" + id )
+          }
+          else
+            return false;
+
+          if( elem.style.display == "block" )
+          {
+            elem.style.display = "none"
+            link.innerHTML = "show source"
+          }
+          else
+          {
+            elem.style.display = "block"
+            link.innerHTML = "hide source"
+          }
+        }
+
+        function openCode( url )
+        {
+          window.open( url, "SOURCE_CODE", "width=400,height=400,scrollbars=yes" )
+        }
+      // ]]>
+    </script>
+  </head>
+
+  <body>
+  <table border='0' cellpadding='0' cellspacing='0' width="100%" class='banner'>
+  <tr><td>
+    <table width="100%" border='0' cellpadding='0' cellspacing='0'><tr>
+      <td class="file-title" colspan="2"><span class="file-title-prefix">File</span><br />CHANGES</td>
+      <td align="right">
+        <table border='0' cellspacing="0" cellpadding="2">
+          <tr>
+            <td>Path:</td>
+            <td>CHANGES
+            </td>
+          </tr>
+          <tr>
+            <td>Modified:</td>
+            <td>Sun, 23 Sep 2007 18:31:34 -0700</td>
+          </tr>
+        </table>
+      </td></tr>
+    </table>
+  </td></tr>
+</table><br>
+ <!-- banner header -->
+
+  <div id="bodyContent">
+      <div id="content">
+
+  <div class="description"><h1>CHANGES</h1>
+<p>
+Catalog(ue) of changes for Twitter4R 0.1.x releases including Retrospectiva
+ticket cross-reference numbers. Refer to <a
+href="http://retro.tautology.net/projects/twitter4r/tickets">retro.tautology.net/projects/twitter4r/tickets</a>
+for more information.
+</p>
+<h2>0.2.5 Changes</h2>
+<h3>2007-09-23</h3>
+<ul>
+<li>Added paging support as per Sergio Santos&#8217; request (36).
+
+</li>
+</ul>
+<h2>0.2.4 Changes</h2>
+<h3>2007-07-24</h3>
+<ul>
+<li>Fixed ActiveSupport +<a href="../classes/Time.html#M000002">Time#to_s</a>+
+conflict such that integration with Rails is much less painful (34)
+
+</li>
+</ul>
+<h2>0.2.3 Changes</h2>
+<h3>2007-07-22</h3>
+<ul>
+<li>Fixed defect 31 such that passing string screen name as for user argument
+is handled correctly.
+
+</li>
+<li>Fixed 30 typo: respond_to -&gt; respond_to?
+
+</li>
+<li>Added relevant exception handling for message(:post, &#8230;) case (32)
+
+</li>
+<li>Add ability to pass in <a
+href="../classes/Twitter/User.html">Twitter::User</a> object to
+Twitter::Client#user(...) 33
+
+</li>
+<li>Added stats Rake task
+
+</li>
+<li>Updated RDoc for Twitter::Client#user to warn against using it to get
+followers of authenticated user and updated ArgumentError raising logic as
+per 29.
+
+</li>
+</ul>
+<h2>0.2.2 Changes</h2>
+<h3>2007-07-18</h3>
+<ul>
+<li>Fixed URI paths for user, messaging and friendship APIs (25)
+
+</li>
+<li>Added action checks for <a
+href="../classes/Twitter/Client.html">Twitter::Client</a> methods: user,
+my, message, messages, status, timeline, friend (26)
+
+</li>
+<li>Added &#8216;source&#8217; configuration documentation.
+
+</li>
+<li>Added missing attributes for <a
+href="../classes/Twitter/User.html">Twitter::User</a> (28)
+
+</li>
+</ul>
+<h2>0.2.1 Changes</h2>
+<h3>2007-07-17</h3>
+<ul>
+<li>Added &#8216;source&#8217; feature and configurability.
+
+</li>
+</ul>
+<h2>0.2.0 Changes</h2>
+<h3>2007-07-08</h3>
+<ul>
+<li>Added featured users API as an &quot;extra&quot; (19).
+
+</li>
+<li>Productionized website for publishing.
+
+</li>
+<li>Published Ruby Gem on Rubyforge.
+
+</li>
+</ul>
+<h3>2007-07-07</h3>
+<ul>
+<li>Refactored Twitter4R API to be more consistent, by grouping APIs (6):
+
+<ul>
+<li>Messaging APIs: direct_messages, new, destroy, replies
+
+</li>
+<li>Friendship APIs: create, destroy
+
+</li>
+</ul>
+</li>
+<li>Added following features (7):
+
+<ul>
+<li>Retrieving direct messages
+
+</li>
+<li>User APIs: friends, followers, show
+
+</li>
+</ul>
+</li>
+<li>Updated documentation and example code.
+
+</li>
+</ul>
+<h3>2007-07-06</h3>
+<ul>
+<li>Refactored Twitter4R API to be more consistent, by grouping APIs (6):
+
+<ul>
+<li>Status APIs: show, update, destroy
+
+</li>
+<li>User APIs: friends, followers, show
+
+</li>
+</ul>
+</li>
+<li>Added X-<a href="../classes/Twitter.html">Twitter</a>-Client HTTP headers
+and <a href="../classes/Twitter/Config.html">Twitter::Config</a> options
+(16)
+
+</li>
+<li>Removed redundant feature (8):
+
+<ul>
+<li>Followers timeline
+
+</li>
+</ul>
+</li>
+<li>Refactored HTTP request/response code to DRY up code.
+
+</li>
+<li>Fix REST error handling to use is_a?(HTTPSuccess) instead of code in
+[&#8216;200&#8217;, &#8216;201&#8217;] to determine REST error (15).
+
+</li>
+</ul>
+<h3>2007-06-25</h3>
+<ul>
+<li>Updated example documentation (14)
+
+</li>
+<li>Refactored marshaling unmarshaling code (13)
+
+</li>
+</ul>
+<h3>2007-06-20</h3>
+<ul>
+<li>Added proxy user/pass support. Tested only via endo-testing. (No
+system/integration testing behind real proxy as I do not have that
+environment).
+
+</li>
+</ul>
+<h3>2007-06-17</h3>
+<ul>
+<li>Refactored Twitter4R API to be more consistent, by grouping APIs (6):
+
+<ul>
+<li>Timeline APIs: public, friends, user
+
+</li>
+</ul>
+</li>
+</ul>
+<h3>2007-06-13</h3>
+<ul>
+<li>Added RSpec Autotest integration
+
+</li>
+<li>Fixed Twitter::Meta generation of spec for hash values
+
+</li>
+<li>Added HTTP header to each request including generated User-Agent header
+
+</li>
+<li>Added RCovMorpher and template to restyle RCov output upon release
+
+</li>
+<li>Added Gemspec dependencies and requirements
+
+</li>
+<li>Added default tidy YAML configuration file for RCovMorpher
+
+</li>
+<li>Added Contributors list and updated external dependencies list to README
+
+</li>
+<li>Removed shebang from examples
+
+</li>
+</ul>
+<h3>2007-06-12</h3>
+<ul>
+<li>Added proxy support as per Kaiichi Matsunaga submitted patch (11).
+
+</li>
+<li>Added SSL support (12)
+
+</li>
+</ul>
+<h3>2007-05-19</h3>
+<ul>
+<li>Translated RSpec specifications from 0.8.2 compliant to 1.0.0 (10)
+
+</li>
+</ul>
+<h2>0.1.1 Changes</h2>
+<h3>2007-06-25</h3>
+<ul>
+<li>Added SSL support (12)
+
+</li>
+<li>Added Proxy support (11)
+
+</li>
+</ul>
+<h2>0.1.0 Changes</h2>
+<h3>2007-05-08</h3>
+<ul>
+<li>Added Google Analytics Javascript code to website pages (5)
+
+</li>
+</ul>
+<h3>2007-05-07</h3>
+<ul>
+<li>Fixed errors in online sample code documentation and redeployed website (2
+and 3)
+
+</li>
+<li>Created more consistent RDoc theme to go more with website home page (4)
+
+</li>
+</ul>
+<h3>2007-05-06</h3>
+<ul>
+<li>Initial revision of codebase commited; includes:
+
+<ul>
+<li>Achieved 80% <a href="../classes/Twitter.html">Twitter</a> API
+feature-completeness
+
+</li>
+<li>Attained 100% RSpec C0 code coverage
+
+</li>
+<li>Rake tasks for: RSpec, RCov, RDoc, Gem, Rubyforge Publishing, etc.
+
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+
+  </div>
+
+      <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+_uacct = "UA-837842-4";
+urchinTracker();
+    </script>
+  </body>
+</html>

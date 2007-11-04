@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>File: configure.rb</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+    <script language="JavaScript" type="text/javascript">
+    // <![CDATA[
+
+        function toggleSource( id )
+        {
+          var elem
+          var link
+
+          if( document.getElementById )
+          {
+            elem = document.getElementById( id )
+            link = document.getElementById( "l_" + id )
+          }
+          else if ( document.all )
+          {
+            elem = eval( "document.all." + id )
+            link = eval( "document.all.l_" + id )
+          }
+          else
+            return false;
+
+          if( elem.style.display == "block" )
+          {
+            elem.style.display = "none"
+            link.innerHTML = "show source"
+          }
+          else
+          {
+            elem.style.display = "block"
+            link.innerHTML = "hide source"
+          }
+        }
+
+        function openCode( url )
+        {
+          window.open( url, "SOURCE_CODE", "width=400,height=400,scrollbars=yes" )
+        }
+      // ]]>
+    </script>
+  </head>
+
+  <body>
+  <table border='0' cellpadding='0' cellspacing='0' width="100%" class='banner'>
+  <tr><td>
+    <table width="100%" border='0' cellpadding='0' cellspacing='0'><tr>
+      <td class="file-title" colspan="2"><span class="file-title-prefix">File</span><br />configure.rb</td>
+      <td align="right">
+        <table border='0' cellspacing="0" cellpadding="2">
+          <tr>
+            <td>Path:</td>
+            <td>examples/configure.rb
+            </td>
+          </tr>
+          <tr>
+            <td>Modified:</td>
+            <td>Sun, 23 Sep 2007 19:12:42 -0700</td>
+          </tr>
+        </table>
+      </td></tr>
+    </table>
+  </td></tr>
+</table><br>
+ <!-- banner header -->
+
+  <div id="bodyContent">
+      <div id="content">
+
+  <div class="description"><h1>Configuration API Examples</h1>
+<pre>
+ require('rubygems')
+ gem('twitter4r', '0.2.0')
+ require('twitter')
+</pre>
+<p>
+Here we setup configuration for all <a
+href="../../classes/Twitter/Client.html">Twitter::Client</a> instances This
+looks much like Rails&#8217; Initializer code that can be found in
+config/environment in Rails applications by design.
+</p>
+<pre>
+ Twitter::Client.configure do |conf|
+   # We can set Twitter4R to use &lt;tt&gt;:ssl&lt;/tt&gt; or &lt;tt&gt;:http&lt;/tt&gt; to connect to the Twitter API.
+   # Defaults to &lt;tt&gt;:ssl&lt;/tt&gt;
+   conf.protocol = :ssl
+
+   # We can set Twitter4R to use another host name (perhaps for internal
+   # testing purposes).
+   # Defaults to 'twitter.com'
+   conf.host = 'twitter.com'
+
+   # We can set Twitter4R to use another port (also for internal
+   # testing purposes).
+   # Defaults to 443
+   conf.port = 443
+
+   # We can set proxy information for Twitter4R
+   # By default all following values are set to &lt;tt&gt;nil&lt;/tt&gt;.
+   conf.proxy_host = 'myproxy.host'
+   conf.proxy_port = 8080
+   conf.proxy_user = 'myuser'
+   conf.proxy_pass = 'mypass'
+
+   # We can also change the User-Agent and X-Twitter-Client* HTTP headers
+   conf.user_agent = 'MyAppAgentName'
+   conf.application_name = 'MyAppName'
+   conf.application_version = 'v1.5.6'
+   conf.application_url = 'http://myapp.url'
+
+   # Twitter (not Twitter4R) will have to setup a source ID for your application to get it
+   # recognized by the web interface according to your preferences.
+   # To see more information how to go about doing this, please referen to the following thread:
+   # http://groups.google.com/group/twitter4r-users/browse_thread/thread/c655457fdb127032
+   conf.source = &quot;your-source-id-that-twitter-recognizes&quot;
+
+ end
+</pre>
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+
+  </div>
+
+      <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+_uacct = "UA-837842-4";
+urchinTracker();
+    </script>
+  </body>
+</html>

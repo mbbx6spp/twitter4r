@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>File: timeline.rb</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+    <script language="JavaScript" type="text/javascript">
+    // <![CDATA[
+
+        function toggleSource( id )
+        {
+          var elem
+          var link
+
+          if( document.getElementById )
+          {
+            elem = document.getElementById( id )
+            link = document.getElementById( "l_" + id )
+          }
+          else if ( document.all )
+          {
+            elem = eval( "document.all." + id )
+            link = eval( "document.all.l_" + id )
+          }
+          else
+            return false;
+
+          if( elem.style.display == "block" )
+          {
+            elem.style.display = "none"
+            link.innerHTML = "show source"
+          }
+          else
+          {
+            elem.style.display = "block"
+            link.innerHTML = "hide source"
+          }
+        }
+
+        function openCode( url )
+        {
+          window.open( url, "SOURCE_CODE", "width=400,height=400,scrollbars=yes" )
+        }
+      // ]]>
+    </script>
+  </head>
+
+  <body>
+  <table border='0' cellpadding='0' cellspacing='0' width="100%" class='banner'>
+  <tr><td>
+    <table width="100%" border='0' cellpadding='0' cellspacing='0'><tr>
+      <td class="file-title" colspan="2"><span class="file-title-prefix">File</span><br />timeline.rb</td>
+      <td align="right">
+        <table border='0' cellspacing="0" cellpadding="2">
+          <tr>
+            <td>Path:</td>
+            <td>examples/timeline.rb
+            </td>
+          </tr>
+          <tr>
+            <td>Modified:</td>
+            <td>Tue, 21 Aug 2007 20:56:52 -0700</td>
+          </tr>
+        </table>
+      </td></tr>
+    </table>
+  </td></tr>
+</table><br>
+ <!-- banner header -->
+
+  <div id="bodyContent">
+      <div id="content">
+
+  <div class="description"><h1>Timeline API Examples</h1>
+<pre>
+ require('rubygems')
+ gem('twitter4r', '0.2.0')
+ require('twitter')
+</pre>
+<p>
+The following is only required if you want to use some configuration helper
+methods like <tt>Twitte4R::Client.from_config</tt> for sensitive/instance
+context.
+</p>
+<pre>
+ require 'twitter/console'
+ config_file = File.join(File.dirname(__FILE__), '..', 'config', 'twitter.yml')
+</pre>
+<p>
+To override client connection configuration please refer to the <a
+href="file:configure_rb.html">configure.rb</a> example code.
+</p>
+<pre>
+ twitter = Twitter::Client.from_config(config_file)
+</pre>
+<p>
+This returns the public timeline as an <tt>Array</tt>.
+</p>
+<p>
+We pass a block in to do something with each status returned inline.
+However, we still get to keep the <tt>public_timeline</tt> array after the
+method returns, for our application&#8216;s safe keeping.
+</p>
+<p>
+It is not necessary to pass in a block to this method, so don&#8216;t worry
+if you don&#8216;t want to do that. All calls to
+<tt>Twitter::Client#timeline_for</tt> can pass in a block that works the
+same way as explained here.
+</p>
+<pre>
+ public_timeline = twitter.timeline_for(:public) do |status|
+   puts status.user.screen_name, status.text
+ end
+</pre>
+<p>
+This returns the timeline for all your friends as an <tt>Array</tt>. See
+public timeline example above for discussion about passing in block, which
+is possible to all calls to <tt>Twitter::Client#timeline_for</tt>.
+</p>
+<pre>
+ all_friends_timeline = twitter.timeline_for(:friends)
+</pre>
+<p>
+This returns the timeline for a particular friend.
+</p>
+<pre>
+ myfriend_timeline = twitter.timeline_for(:friend, :id =&gt; 'dictionary')
+</pre>
+<p>
+This returns the timeline for a particular user (who may or may not be a
+friend).
+</p>
+<pre>
+ user_timeline = twitter.timeline_for(:user, :id =&gt; 'twitter4r')
+</pre>
+<p>
+This returns the authenticated user&#8216;s timeline
+</p>
+<p>
+We can also use the following code snippet, which is equivalent to the
+example below:
+</p>
+<pre>
+ my_timeline = twitter.my(:timeline)
+</pre>
+<p>
+See Status API examples in <tt>status.rb</tt> file.
+</p>
+<pre>
+ my_timeline = twitter.timeline_for(:me)
+</pre>
+<p>
+Below we demonstrate how to use more interesting parameters to the
+<tt>Twitter::Client#timeline_for</tt> method
+</p>
+<p>
+Returns all public statuses since the status id returned by:
+</p>
+<pre>
+ public_timeline.first.id
+ latest_timeline = twitter.timeline_for(:public, :since_id =&gt; public_timeline.first.id)
+</pre>
+<p>
+Returns all friend statuses in the last 24 hours:
+</p>
+<pre>
+ yesterday = Time.now - 60*60*24
+ new_friends_timeline = twitter.timeline_for(:friends, :since =&gt; yesterday)
+</pre>
+<p>
+Returns last three statuses from user <tt>&#8216;twitter4r&#8216;</tt>:
+</p>
+<pre>
+ latest_twitter4r_timeline = twitter.timeline_for(:user, :id =&gt; 'twitter4', :count =&gt; 3)
+</pre>
+<p>
+Returns timeline from user <tt>&#8216;dictionary&#8216;</tt> since
+yesterday at this time, with block:
+</p>
+<pre>
+ new_dictionary_timeline = twitter.timeline_for(:user, :id =&gt; 'dictionary', :since =&gt; yesterday) do |status|
+   puts status.text
+ end
+</pre>
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+
+  </div>
+
+      <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+_uacct = "UA-837842-4";
+urchinTracker();
+    </script>
+  </body>
+</html>

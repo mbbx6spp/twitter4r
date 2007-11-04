@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>File: model.rb</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+    <script language="JavaScript" type="text/javascript">
+    // <![CDATA[
+
+        function toggleSource( id )
+        {
+          var elem
+          var link
+
+          if( document.getElementById )
+          {
+            elem = document.getElementById( id )
+            link = document.getElementById( "l_" + id )
+          }
+          else if ( document.all )
+          {
+            elem = eval( "document.all." + id )
+            link = eval( "document.all.l_" + id )
+          }
+          else
+            return false;
+
+          if( elem.style.display == "block" )
+          {
+            elem.style.display = "none"
+            link.innerHTML = "show source"
+          }
+          else
+          {
+            elem.style.display = "block"
+            link.innerHTML = "hide source"
+          }
+        }
+
+        function openCode( url )
+        {
+          window.open( url, "SOURCE_CODE", "width=400,height=400,scrollbars=yes" )
+        }
+      // ]]>
+    </script>
+  </head>
+
+  <body>
+  <table border='0' cellpadding='0' cellspacing='0' width="100%" class='banner'>
+  <tr><td>
+    <table width="100%" border='0' cellpadding='0' cellspacing='0'><tr>
+      <td class="file-title" colspan="2"><span class="file-title-prefix">File</span><br />model.rb</td>
+      <td align="right">
+        <table border='0' cellspacing="0" cellpadding="2">
+          <tr>
+            <td>Path:</td>
+            <td>examples/model.rb
+            </td>
+          </tr>
+          <tr>
+            <td>Modified:</td>
+            <td>Tue, 21 Aug 2007 20:56:52 -0700</td>
+          </tr>
+        </table>
+      </td></tr>
+    </table>
+  </td></tr>
+</table><br>
+ <!-- banner header -->
+
+  <div id="bodyContent">
+      <div id="content">
+
+  <div class="description"><h1>Model API Examples</h1>
+<pre>
+ require('rubygems')
+ gem('twitter4r', '0.2.0')
+ require('twitter')
+</pre>
+<p>
+The following is only required if you want to use some configuration helper
+methods like <tt>Twitte4R::Client.from_config</tt> for sensitive/instance
+context.
+</p>
+<pre>
+ require 'twitter/console'
+ config_file = File.join(File.dirname(__FILE__), '..', 'config', 'twitter.yml')
+</pre>
+<p>
+To override client connection configuration please refer to the <a
+href="file:configure_rb.html">configure.rb</a> example code.
+</p>
+<pre>
+ twitter = Twitter::Client.from_config(config_file)
+</pre>
+<p>
+The purpose of the <b>Model API</b> is to make <a
+href="../../classes/Twitter.html">Twitter</a> REST methods integrated into
+class and instance methods that resemble <tt>ActiveRecord</tt> class API.
+</p>
+<h2>Create Methods</h2>
+<p>
+For example, suppose we want to create a new direct message to a friend:
+</p>
+<pre>
+ message = Twitter::Message.create(
+   :text =&gt; 'Ich liebe dich!',
+   :client =&gt; twitter,
+   :recipient =&gt; 'myspouse')
+</pre>
+<p>
+We can also create a new status message, which updates our (the
+authenticated user&#8216;s) timeline:
+</p>
+<pre>
+ status = Twitter::Status.create(
+   :text =&gt; 'Doing early Christmas shopping in July',
+   :client =&gt; twitter)
+</pre>
+<p>
+Notice we must always pass in a <tt>:client</tt> key-value pair giving the
+client context object.
+</p>
+<p>
+There is currently no useful Twitter::User.create implementation as <tt><a
+href="../../classes/Twitter.html">Twitter</a></tt> does not provide this
+server REST API. This is <b>not</b> a <tt>Twitter4R</tt> limitation. Please
+harass the Twitter.com/Obvious developer for this not me please.
+</p>
+<h2>Finder Methods</h2>
+<p>
+We can also use finder methods that look very similar to
+<tt>ActiveRecord</tt> style classes:
+</p>
+<pre>
+ user = Twitter::User.find('myfriend', twitter)
+ status = Twitter::Status.find(status.id, twitter)
+</pre>
+<p>
+There is currently no useful Twitter::Message.find implementation as <tt><a
+href="../../classes/Twitter.html">Twitter</a></tt> does not provide this
+server REST API. Ths is <b>not</b> a <tt>Twitter4R</tt> limitation. Please
+harass the Twitter.com/Obvious developer for this not me please.
+</p>
+<h2>Domain Specific Methods</h2>
+<p>
+<tt><a href="../../classes/Twitter/User.html">Twitter::User</a></tt> has a
+few domain specific methods for convenience:
+</p>
+<pre>
+ user.is_me? # =&gt; false since &lt;tt&gt;user&lt;/tt&gt; is 'myfriend' not authenticated user
+ me = Twitter::User.find('mylogin')
+ me.is_me? # =&gt; true since &lt;tt&gt;me&lt;/tt&gt; is authenticated user
+ me.followers # =&gt; return Array of followers for authenticated user (only available for authenticated user)
+ me.friends # =&gt; returns Array of friends for that user instance
+ me.befriend(user) # =&gt; user (only available for authenticated user)
+ me.defriend(user) # =&gt; user (only available for authenticated user)
+</pre>
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+
+  </div>
+
+      <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+_uacct = "UA-837842-4";
+urchinTracker();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Class: Twitter::Message</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+    <script language="JavaScript" type="text/javascript">
+    // <![CDATA[
+
+        function toggleSource( id )
+        {
+          var elem
+          var link
+
+          if( document.getElementById )
+          {
+            elem = document.getElementById( id )
+            link = document.getElementById( "l_" + id )
+          }
+          else if ( document.all )
+          {
+            elem = eval( "document.all." + id )
+            link = eval( "document.all.l_" + id )
+          }
+          else
+            return false;
+
+          if( elem.style.display == "block" )
+          {
+            elem.style.display = "none"
+            link.innerHTML = "show source"
+          }
+          else
+          {
+            elem.style.display = "block"
+            link.innerHTML = "hide source"
+          }
+        }
+
+        function openCode( url )
+        {
+          window.open( url, "SOURCE_CODE", "width=400,height=400,scrollbars=yes" )
+        }
+      // ]]>
+    </script>
+  </head>
+
+  <body>
+  <table width="100%" border='0' cellpadding='0' cellspacing='0' class='banner'><tr>
+  <td class="file-title"><span class="file-title-prefix">Class</span><br />Twitter::Message</td>
+  <td align="right">
+    <table cellspacing=0 cellpadding=2>
+      <tr valign="top">
+        <td>In:</td>
+        <td>
+<a href="../../files/lib/twitter/rails_rb.html">lib/twitter/rails.rb</a>
+<a href="../../files/lib/twitter/model_rb.html">lib/twitter/model.rb</a>
+        </td>
+      </tr>
+    <tr>
+      <td>Parent:</td>
+      <td>
+Object
+     </td>
+   </tr>
+         </table>
+        </td>
+        </tr>
+      </table>
+ <!-- banner header -->
+
+  <div id="bodyContent">
+      <div id="content">
+
+  <div class="description"><p>
+Represents a direct message on <tt><a
+href="../Twitter.html">Twitter</a></tt> between <tt><a
+href="../Twitter.html">Twitter</a></tt> users.
+</p>
+</div>
+
+
+
+  <div class="sectiontitle">Methods</div>
+  <ul>
+  <li><a href="#M000016">attributes</a></li>
+  <li><a href="#M000018">create</a></li>
+  <li><a href="#M000017">find</a></li>
+  <li><a href="#M000019">init</a></li>
+  </ul>
+
+<div class="sectiontitle">Included Modules</div>
+<ul>
+  <li><a href="RailsPatch.html">Twitter::RailsPatch</a></li>
+  <li>ModelMixin</li>
+</ul>
+
+
+
+
+
+<div class="sectiontitle">Public Class methods</div>
+<div class="method">
+  <div class="title">
+    <a name="M000016"></a><b>attributes</b>()
+  </div>
+  <div class="description">
+  <p>
+Used as factory method callback
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000016_source')" id="l_M000016_source">show source</a> ]</p>
+  <div id="M000016_source" class="dyn-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/twitter/model.rb, line 280</span>
+280:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">attributes</span>; <span class="ruby-ivar">@@ATTRIBUTES</span>; <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000018"></a><b>create</b>(params)
+  </div>
+  <div class="description">
+  <p>
+Creates a new direct message from the authenticated user of the given
+<tt>client</tt> context.
+</p>
+<p>
+You MUST include a valid/authenticated <tt>client</tt> context in the given
+<tt>params</tt> argument.
+</p>
+<p>
+For example:
+</p>
+<pre>
+ status = Twitter::Message.create(
+   :text =&gt; 'I am shopping for flip flops',
+   :receipient =&gt; 'anotherlogin',
+   :client =&gt; client)
+</pre>
+<p>
+An <tt>ArgumentError</tt> will be raised if no valid client context is
+given in the <tt>params</tt> <a href="../Hash.html">Hash</a>. For example,
+</p>
+<pre>
+ status = Twitter::Status.create(:text =&gt; 'I am shopping for flip flops')
+</pre>
+<p>
+The above line of code will raise an <tt>ArgumentError</tt>.
+</p>
+<p>
+The same is true when you do not provide any of the following key-value
+pairs in the <tt>params</tt> argument given:
+</p>
+<ul>
+<li><tt>text</tt> - the <a href="../String.html">String</a> that will be the
+message text to send to <tt>user</tt>
+
+</li>
+<li><tt>recipient</tt> - the user ID, screen_name or <a
+href="User.html">Twitter::User</a> object representation of the recipient
+of the direct message
+
+</li>
+</ul>
+<p>
+The <a href="Message.html">Twitter::Message</a> object returned after the
+direct message is successfully sent on the <a
+href="../Twitter.html">Twitter</a> server side is returned from this
+method.
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000018_source')" id="l_M000018_source">show source</a> ]</p>
+  <div id="M000018_source" class="dyn-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/twitter/model.rb, line 314</span>
+314:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create</span>(<span class="ruby-identifier">params</span>)
+315:         <span class="ruby-identifier">client</span>, <span class="ruby-identifier">text</span>, <span class="ruby-identifier">recipient</span> = <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:client</span>], <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:text</span>], <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:recipient</span>]
+316:         <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">'Valid client context must be given'</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">client</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Twitter</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span>)
+317:         <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">'Message text must be supplied to send direct message'</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">text</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>)
+318:         <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">'Recipient user must be specified to send direct message'</span> <span class="ruby-keyword kw">unless</span> [<span class="ruby-constant">Twitter</span><span class="ruby-operator">::</span><span class="ruby-constant">User</span>, <span class="ruby-constant">Integer</span>, <span class="ruby-constant">String</span>].<span class="ruby-identifier">member?</span>(<span class="ruby-identifier">recipient</span>.<span class="ruby-identifier">class</span>)
+319:         <span class="ruby-identifier">client</span>.<span class="ruby-identifier">message</span>(<span class="ruby-identifier">:post</span>, <span class="ruby-identifier">text</span>, <span class="ruby-identifier">recipient</span>)
+320:       <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000017"></a><b>find</b>(id, client)
+  </div>
+  <div class="description">
+  <p>
+Raises <tt>NotImplementedError</tt> because currently <tt><a
+href="../Twitter.html">Twitter</a></tt> doesn&#8216;t provide a facility to
+retrieve one message by unique ID.
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000017_source')" id="l_M000017_source">show source</a> ]</p>
+  <div id="M000017_source" class="dyn-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/twitter/model.rb, line 285</span>
+285:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">find</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">client</span>)
+286:         <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>, <span class="ruby-value str">'Twitter has yet to implement a REST API for this.  This is not a Twitter4R library limitation.'</span>
+287:       <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="sectiontitle">Protected Instance methods</div>
+<div class="method">
+  <div class="title">
+    <a name="M000019"></a><b>init</b>()
+  </div>
+  <div class="description">
+  <p>
+Constructor callback
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000019_source')" id="l_M000019_source">show source</a> ]</p>
+  <div id="M000019_source" class="dyn-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/twitter/model.rb, line 325</span>
+325:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">init</span>
+326:         <span class="ruby-ivar">@sender</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@sender</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@sender</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+327:         <span class="ruby-ivar">@recipient</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@recipient</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@recipient</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+328:         <span class="ruby-ivar">@created_at</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-ivar">@created_at</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@created_at</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>)
+329:       <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+</div>
+
+  </div>
+
+      <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+_uacct = "UA-837842-4";
+urchinTracker();
+    </script>
+  </body>
+</html>

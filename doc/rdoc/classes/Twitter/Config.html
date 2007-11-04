@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Class: Twitter::Config</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+    <script language="JavaScript" type="text/javascript">
+    // <![CDATA[
+
+        function toggleSource( id )
+        {
+          var elem
+          var link
+
+          if( document.getElementById )
+          {
+            elem = document.getElementById( id )
+            link = document.getElementById( "l_" + id )
+          }
+          else if ( document.all )
+          {
+            elem = eval( "document.all." + id )
+            link = eval( "document.all.l_" + id )
+          }
+          else
+            return false;
+
+          if( elem.style.display == "block" )
+          {
+            elem.style.display = "none"
+            link.innerHTML = "show source"
+          }
+          else
+          {
+            elem.style.display = "block"
+            link.innerHTML = "hide source"
+          }
+        }
+
+        function openCode( url )
+        {
+          window.open( url, "SOURCE_CODE", "width=400,height=400,scrollbars=yes" )
+        }
+      // ]]>
+    </script>
+  </head>
+
+  <body>
+  <table width="100%" border='0' cellpadding='0' cellspacing='0' class='banner'><tr>
+  <td class="file-title"><span class="file-title-prefix">Class</span><br />Twitter::Config</td>
+  <td align="right">
+    <table cellspacing=0 cellpadding=2>
+      <tr valign="top">
+        <td>In:</td>
+        <td>
+<a href="../../files/lib/twitter/config_rb.html">lib/twitter/config.rb</a>
+        </td>
+      </tr>
+    <tr>
+      <td>Parent:</td>
+      <td>
+Object
+     </td>
+   </tr>
+         </table>
+        </td>
+        </tr>
+      </table>
+ <!-- banner header -->
+
+  <div id="bodyContent">
+      <div id="content">
+
+  <div class="description"><p>
+Represents global configuration for <a
+href="Client.html">Twitter::Client</a>. Can override the following
+configuration options:
+</p>
+<ul>
+<li><tt>protocol</tt> - <tt>:http</tt>, <tt>:https</tt> or <tt>:ssl</tt>
+supported. <tt>:ssl</tt> is an alias for <tt>:https</tt>. Defaults to
+<tt>:ssl</tt>
+
+</li>
+<li><tt>host</tt> - hostname to connect to for the <a
+href="../Twitter.html">Twitter</a> service. Defaults to
+<tt>&#8216;twitter.com&#8216;</tt>.
+
+</li>
+<li><tt>port</tt> - port to connect to for the <a
+href="../Twitter.html">Twitter</a> service. Defaults to <tt>443</tt>.
+
+</li>
+<li><tt>proxy_host</tt> - proxy host to use. Defaults to nil.
+
+</li>
+<li><tt>proxy_port</tt> - proxy host to use. Defaults to nil.
+
+</li>
+<li><tt>proxy_user</tt> - proxy username to use. Defaults to nil.
+
+</li>
+<li><tt>proxy_pass</tt> - proxy password to use. Defaults to nil.
+
+</li>
+<li><tt>user_agent</tt> - user agent string to use for each request of the HTTP
+header.
+
+</li>
+<li><tt>application_name</tt> - name of your client application. Defaults to
+&#8216;Twitter4R&#8216;
+
+</li>
+<li><tt>application_version</tt> - version of your client application. Defaults
+to current <tt>Twitter::Version.to_version</tt>.
+
+</li>
+<li><tt>application_url</tt> - URL of your client application. Defaults to <a
+href="http://twitter4r.rubyforge.org">twitter4r.rubyforge.org</a>.
+
+</li>
+<li><tt>source</tt> - the source id given to you by <a
+href="../Twitter.html">Twitter</a> to identify your application in their
+web interface. Note: you must contact Twitter.com developer directly so
+they can configure their servers appropriately.
+
+</li>
+</ul>
+</div>
+
+
+
+  <div class="sectiontitle">Methods</div>
+  <ul>
+  <li><a href="#M000026">eql?</a></li>
+  </ul>
+
+<div class="sectiontitle">Included Modules</div>
+<ul>
+  <li>ClassUtilMixin</li>
+</ul>
+
+
+
+
+
+<div class="sectiontitle">Public Instance methods</div>
+<div class="method">
+  <div class="title">
+    <a name="M000026"></a><b>eql?</b>(other)
+  </div>
+  <div class="description">
+  <p>
+Override of Object#eql? to ensure RSpec specifications run correctly. Also
+done to follow Ruby best practices.
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000026_source')" id="l_M000026_source">show source</a> ]</p>
+  <div id="M000026_source" class="dyn-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/twitter/config.rb, line 39</span>
+39:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">eql?</span>(<span class="ruby-identifier">other</span>)
+40:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">self</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>
+41:       <span class="ruby-ivar">@@ATTRIBUTES</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">att</span><span class="ruby-operator">|</span>
+42:         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">att</span>).<span class="ruby-identifier">eql?</span>(<span class="ruby-identifier">other</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">att</span>))
+43:       <span class="ruby-keyword kw">end</span>
+44:       <span class="ruby-keyword kw">true</span>
+45:     <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+</div>
+
+  </div>
+
+      <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+_uacct = "UA-837842-4";
+urchinTracker();
+    </script>
+  </body>
+</html>

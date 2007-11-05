@@ -55,6 +55,24 @@ def mas_twitter_config(attrs = {})
   stubbed_twitter_conf(config, attrs)
 end
 
+def stubbed_twitter_status(status, attrs = {})
+  opts = {
+    :id => 23492343,
+  }.merge(attrs)
+  status.stub!(:id).and_return(opts[:id])
+  status.stub!(:to_i).and_return(opts[:id])
+  (opts.keys - [:id]).each do |att|
+    status.stub!(att).and_return(opts[att])
+  end
+  status.stub!(:bless).and_return(nil)
+  status
+end
+
+def mas_twitter_status(attrs = {})
+  status = mock(Twitter::Status)
+  stubbed_twitter_status(status, attrs)
+end
+
 # Spec helper that returns the project root directory as absolute path string
 def project_root_dir
   File.expand_path(File.join(File.dirname(__FILE__), '..'))
@@ -123,8 +141,10 @@ def mas_net_http_response(status = :success,
     _create_http_response(response, "201", "Created")
   when :redirect || 301
     _create_http_response(response, "301", "Redirect")
-  when :not_authorized || 403
-    _create_http_response(response, "403", "Not Authorized")
+  when :not_authorized || 401
+    _create_http_response(response, "401", "Not Authorized")
+  when :forbidden || 403
+    _create_http_response(response, "403", "Forbidden")
   when :file_not_found || 404
     _create_http_response(response, "404", "File Not Found")
   when :server_error || 500

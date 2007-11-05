@@ -18,7 +18,6 @@ class Twitter::Client
   # * +:received+
   # * +:sent+
   def messages(action, options = nil)
-    # method scoped method
     def uri_suffix(opts); opts && opts[:page] ? "?page=#{opts[:page]}" : ""; end
     raise ArgumentError, "Invalid messaging action: #{action}" unless [:sent, :received].member?(action)
     uri = @@MESSAGING_URIS[action] + uri_suffix(options)

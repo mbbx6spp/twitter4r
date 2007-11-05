@@ -1,1 +1,4 @@
 config/twitter.yml
+doc/rdoc/*
+doc/rcov/*
+doc/spec/*

@@ -78,3 +78,22 @@ expect text, message.text,
 expect user.screen_name, message.recipient.screen_name, 
 	'Did not post to expected recipient'
 
+sleep(5)
+puts "Favorites sanity check"
+favorites = twitter.favorites
+expect 0, favorites.size, 'Did not receive expected number of favorites'
+
+sleep(5)
+puts "Add favorite sanity check"
+status_id = 381975342
+status = twitter.favorite(:add, status_id)
+favorites = twitter.favorites
+expect 1, favorites.size, 'Did not add favorite'
+expect status_id, status.id, 'Did not add correct favorite'
+
+sleep(5)
+puts "Remove favorite sanity check"
+status = twitter.favorite(:remove, status_id)
+favorites = twitter.favorites
+expect 0, favorites.size, 'Did not remove favorite'
+expect status_id, status.id, 'Did not remove correct favorite'

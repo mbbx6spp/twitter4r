@@ -15,4 +15,6 @@ require('twitter/client/status.rb')
 require('twitter/client/friendship.rb')
 require('twitter/client/messaging.rb')
 require('twitter/client/user.rb')
+require('twitter/client/auth.rb')
+require('twitter/client/favorites.rb')
 

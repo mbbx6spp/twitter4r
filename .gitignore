@@ -2,3 +2,8 @@ config/twitter.yml
 doc/rdoc/*
 doc/rcov/*
 doc/spec/*
+pkg
+marketing/samples/twitter4rails.post-0_2_4/config/twitter.yml
+marketing/samples/twitter4rails.post-0_2_4/log
+marketing/samples/twitter4rails.post-0_2_4/tmp
+

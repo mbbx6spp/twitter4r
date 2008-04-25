@@ -11,6 +11,8 @@ $KCODE = 'u'
 require 'jcode'
 
 # External requires
+require('yaml')
+require('date')
 require('net/https')
 require('uri')
 require('json')

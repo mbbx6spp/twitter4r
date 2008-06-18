@@ -17,4 +17,4 @@ require('twitter/client/messaging.rb')
 require('twitter/client/user.rb')
 require('twitter/client/auth.rb')
 require('twitter/client/favorites.rb')
-
+require('twitter/client/blocks.rb')

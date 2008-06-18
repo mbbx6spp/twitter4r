@@ -1,9 +1,12 @@
 # File that contains extensions to the Twitter4R library directly related to providing
 # seamless Rails integration.
 
+#begin
+  require('active_record/xml_serialization')
+#rescue
+#  require('active_record/serialization')
+#end
 require 'active_support'
-#require 'active_support/core_ext'
-require 'active_record/xml_serialization'
 
 # Extend +String+ with +#xmlize+ method for convenience.
 class String

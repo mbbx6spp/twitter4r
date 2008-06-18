@@ -3,9 +3,9 @@ require File.join(File.dirname(__FILE__), '..', '..', 'spec_helper')
 describe Hash, "#to_http_str" do
   before(:each) do
     @http_params = {:id => 'otherlogin', :since_id => 3953743, :full_name => 'Lucy Cross'}
-    @id_regexp = Regexp.new("id=#{URI.encode(@http_params[:id].to_s)}")
-    @since_id_regexp = Regexp.new("since_id=#{URI.encode(@http_params[:since_id].to_s)}")
-    @full_name_regexp = Regexp.new("full_name=#{URI.encode(@http_params[:full_name].to_s)}")
+    @id_regexp = Regexp.new("id=#{CGI.escape(@http_params[:id].to_s)}")
+    @since_id_regexp = Regexp.new("since_id=#{CGI.escape(@http_params[:since_id].to_s)}")
+    @full_name_regexp = Regexp.new("full_name=Lucy\\+Cross")
   end
   
   it "should generate expected URL encoded string" do

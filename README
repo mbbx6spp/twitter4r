@@ -9,14 +9,15 @@
 == Contributors
 * Kaiichi Matsunaga <ma2 at lifemedia dot co dot jp> - proxy code suggestion
 * Sergio Santos <> - message paging code suggestion
+* Adam Stiles <adam at stilesoft dot com> - URI.encode => CGI.escape fix
 
 == Description
 Twitter4R provides an object based API to query or update your Twitter account via pure Ruby.  It hides the ugly HTTP/REST code from your code.
 
 == External Dependencies
-* Ruby 1.8 (tested with 1.8.5)
-* RSpec gem 1.0.0+ (tested with 1.0.4)
-* JSON gem 0.4.3+ (tested with versions: 0.4.3, and 0.1.1)
+* Ruby 1.8 (tested with 1.8.6)
+* RSpec gem 1.0.0+ (tested with 1.1.3)
+* JSON gem 0.4.3+ (tested with versions: 1.1.1 and 1.1.2)
 * jcode (for unicode support)
 
 == Usage Examples

@@ -1,7 +1,7 @@
 $:.unshift('lib')
 
 require('rubygems')
-gem('rspec', '>=1.0.0')
+gem('rspec')
 
 require('rake')
 require('twitter')

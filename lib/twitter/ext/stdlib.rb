@@ -12,7 +12,7 @@ class Hash
     result = ''
     return result if self.empty?
     self.each do |key, val|
-      result << "#{key}=#{URI.encode(val.to_s)}&"
+      result << "#{key}=#{CGI.escape(val.to_s)}&"
     end
     result.chop # remove the last '&' character, since it can be discarded
   end

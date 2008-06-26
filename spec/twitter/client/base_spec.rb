@@ -15,6 +15,16 @@ describe "Twitter::Client" do
   end  
 end
 
+describe Twitter::Client, "#inspect" do
+  before(:each) do
+    @client = Twitter::Client.new(:login => "NippleEquality", :password => "3rdnipple")
+  end
+
+  it "should block out password attribute values" do
+    @client.inspect.should_not match(/@password="3rdnipple"/)
+  end
+end
+
 describe Twitter::Client, "#http_header" do
   before(:each) do
     @user_agent = 'myapp'

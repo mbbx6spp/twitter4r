@@ -194,30 +194,6 @@ describe Twitter::User, "#is_me?" do
   end
 end
 
-describe Twitter::User, "#bless(client)" do
-  before(:each) do
-    @twitter = Twitter::Client.from_config('config/twitter.yml')
-    @user_not_me = Twitter::User.new(:screen_name => 'notmylogin')
-    @user_me = Twitter::User.new(:screen_name => @twitter.instance_eval("@login"))
-  end
-  
-  it "should add a followers method" do
-    @user_me.should_not respond_to?(:followers)
-    @user_me.bless(@twitter)
-    @user_me.should respond_to?(:followers)
-  end
-  
-  it "should not add a followers method" do
-    @user_not_me.should_not respond_to?(:followers)
-    @user_not_me.bless(@twitter)
-    @user_not_me.should_not respond_to?(:followers)
-  end
-  
-  after(:each) do
-    nilize(@twitter, @user_not_me, @user_me)
-  end
-end
-
 describe Twitter::User, "#friends" do
   before(:each) do
     @twitter = Twitter::Client.from_config('config/twitter.yml')

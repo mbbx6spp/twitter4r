@@ -1,4 +1,9 @@
 class Twitter::Client
+  alias :old_inspect :inspect
+  def inspect
+    s = old_inspect
+    s.gsub!(/@password=".*?"/, '@password="XXXX"')
+  end
   protected
     attr_accessor :login, :password
     

@@ -1,12 +1,10 @@
 # File that contains extensions to the Twitter4R library directly related to providing
 # seamless Rails integration.
 
-#begin
-  require('active_record/xml_serialization')
-#rescue
-#  require('active_record/serialization')
-#end
-require 'active_support'
+if gem_present?('rails', '<= 1.2.6')
+
+require('active_record/xml_serialization')
+require('active_support')
 
 # Extend +String+ with +#xmlize+ method for convenience.
 class String
@@ -89,4 +87,6 @@ class Twitter::RESTError
     { :code => @code, :message => @message, :uri => @uri }
   end
 end
-
+else
+  warn("WARNING: Twiter4R patch for ActiveRecord defects only supported for Rails 1.2.x currently")
+end

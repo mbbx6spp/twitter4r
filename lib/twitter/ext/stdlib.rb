@@ -34,3 +34,18 @@ class Time
     format ? self.to_formatted_s(format) : self.rfc2822
   end
 end
+
+# Extension to Kernel to add #gem_present? without any exceptions raised
+module Kernel
+
+  # Returns whether or not a gem exists without raising a Gem::LoadError exception
+  def gem_present?(gem_name, version = nil)
+    present = false
+    begin
+      present = gem(gem_name, version)
+    rescue Gem::LoadError => le
+      warn("Gem load error: Couldn't load #{gem} with version requirement #{version}: #{le.to_s}")
+    end
+    present
+  end
+end

@@ -8,6 +8,7 @@ Catalog(ue) of changes for Twitter4R 0.1.x releases including Retrospectiva tick
 * Added Twitter::Client#inspect method to XXXX out passwords
 * Minor refactoring of spec/spec_helper.rb 
 * Added support for :page, :lite and :since options for Twitter::User#followers, Twitter::Client#my([:friends|:followers]...) and Twitter::Client#user([:friends|:followers]...)calls
+* Added Twitter::Client.status(:replies) support
 
 
 == 0.3.0 Changes

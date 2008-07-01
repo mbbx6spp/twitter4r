@@ -27,7 +27,8 @@ class Twitter::Client
   # * +:get+
   # * +:post+
   # * +:delete+
-  def status(action, value)
+  def status(action, value = nil)
+    return self.timeline_for(action, value || {}) if :replies == action
     raise ArgumentError, "Invalid status action: #{action}" unless @@STATUS_URIS.keys.member?(action)
     return nil unless value
   	uri = @@STATUS_URIS[action]

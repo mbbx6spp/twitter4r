@@ -1,3 +1,5 @@
 
 0.3.1 TODO:
-* Added specs for :page, :lite and :since options for Twitter::Client#my(...), Twitter::Client#user(....) and Twitter::User#followers calls
+* Add specs for :page, :lite and :since options support in Twitter::Client#my(...), Twitter::Client#user(....) and Twitter::User#followers calls
+* Add specs for Kernel#gem_present? extension
+* Add spec to test that warning is given to Rails 2.0+ users requiring 'twitter/rails'

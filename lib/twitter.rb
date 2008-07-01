@@ -13,6 +13,7 @@ require 'jcode'
 # External requires
 require('yaml')
 require('date')
+require('time')
 require('net/https')
 require('uri')
 require('cgi')

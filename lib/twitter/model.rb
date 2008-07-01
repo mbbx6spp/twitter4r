@@ -124,15 +124,15 @@ module Twitter
   end
   
   module AuthenticatedUserMixin
-  	def self.included(base)
-  		base.send(:include, InstanceMethods)
-  	end
-  	
-  	module InstanceMethods
+    def self.included(base)
+      base.send(:include, InstanceMethods)
+    end
+ 	
+    module InstanceMethods
       # Returns an Array of user objects that represents the authenticated
       # user's friends on Twitter.
-      def followers
-        @client.my(:followers)
+      def followers(options = {})
+        @client.my(:followers, options)
       end
       
       # Adds given user as a friend.  Returns user object as given by 
@@ -152,7 +152,7 @@ module Twitter
       def defriend(user)
       	@client.friend(:remove, user)
       end
-  	end
+    end
   end
 
   # Represents a <tt>Twitter</tt> user

@@ -14,6 +14,11 @@ class Twitter::Client
   #  @twitter.user(234943) #=> Twitter::User object instance for user with numeric id of 234943
   #  @twitter.user('mylogin') #=> Twitter::User object instance for user with screen name 'mylogin'
   # 
+  # Where <tt>options</tt> is a +Hash+ of options that can include:
+  # * <tt>:page</tt> - optional.  Retrieves the next set of friends.  There are 100 friends per page.  Default: 1.
+  # * <tt>:lite</tt> - optional.  Prevents the inline inclusion of current status.  Default: false.
+  # * <tt>:since</tt> - optional.  Only relevant for <tt>:friends</tt> action.  Narrows the results to just those friends added after the date given as value of this option.  Must be HTTP-formatted date.
+  #
   # An <tt>ArgumentError</tt> will be raised if an invalid <tt>action</tt> 
   # is given.  Valid actions are:
   # * +:info+
@@ -25,30 +30,37 @@ class Twitter::Client
   #  followers = client.my(:followers)
   # OR
   #  followers = client.my(:info).followers
-  def user(id, action = :info)
+  def user(id, action = :info, options = {})
     raise ArgumentError, "Invalid user action: #{action}" unless @@USER_URIS.keys.member?(action)
     raise ArgumentError, "Unable to retrieve followers for user: #{id}" if action.eql?(:followers) and not id.eql?(@login)
     id = id.to_i if id.is_a?(Twitter::User)
-  	response = http_connect {|conn| create_http_get_request(@@USER_URIS[action], :id => id) }
-  	bless_models(Twitter::User.unmarshal(response.body))
+    params = options.merge(:id => id)
+    response = http_connect {|conn| create_http_get_request(@@USER_URIS[action], params) }
+    bless_models(Twitter::User.unmarshal(response.body))
   end
   
   # Syntactic sugar for queries relating to authenticated user in Twitter's User API
   # 
-  # When <tt>action</tt> is:
+  # Where <tt>action</tt> is one of the following:
   # * <tt>:info</tt> - Returns user instance for the authenticated user.
   # * <tt>:friends</tt> - Returns Array of users that are authenticated user's friends
   # * <tt>:followers</tt> - Returns Array of users that are authenticated user's followers
   # 
+  # Where <tt>options</tt> is a +Hash+ of options that can include:
+  # * <tt>:page</tt> - optional.  Retrieves the next set of friends.  There are 100 friends per page.  Default: 1.
+  # * <tt>:lite</tt> - optional.  Prevents the inline inclusion of current status.  Default: false.
+  # * <tt>:since</tt> - optional.  Only relevant for <tt>:friends</tt> action.  Narrows the results to just those friends added after the date given as value of this option.  Must be HTTP-formatted date.
+  #
   # An <tt>ArgumentError</tt> will be raised if an invalid <tt>action</tt> 
   # is given.  Valid actions are:
   # * +:info+
   # * +:friends+
   # * +:followers+
-  def my(action)
+  def my(action, options = {})
     raise ArgumentError, "Invalid user action: #{action}" unless @@USER_URIS.keys.member?(action)
-  	response = http_connect {|conn| create_http_get_request(@@USER_URIS[action], :id => @login) }
-  	users = Twitter::User.unmarshal(response.body)
-  	bless_models(users)
+    params = options.merge(:id => @login)
+    response = http_connect {|conn| create_http_get_request(@@USER_URIS[action], params) }
+    users = Twitter::User.unmarshal(response.body)
+    bless_models(users)
   end
 end

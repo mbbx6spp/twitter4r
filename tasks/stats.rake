@@ -1,7 +1,7 @@
 require('code_statistics')
 
 class CodeStatistics
-  TEST_TYPES = %w(Specs)
+  TEST_TYPES = %w(Specs) unless defined?(TEST_TYPES)
 
   def to_embedded_html
     output = "<table id=\"stats\">\n"

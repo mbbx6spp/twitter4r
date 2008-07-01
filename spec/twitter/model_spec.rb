@@ -221,7 +221,7 @@ describe Twitter::User, "#followers" do
   end
   
   it "should delegate to @client.my(:followers)" do
-    @twitter.should_receive(:my).with(:followers)
+    @twitter.should_receive(:my).with(:followers, {})
     @user.followers
   end
   

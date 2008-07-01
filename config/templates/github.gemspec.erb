@@ -1,0 +1,16 @@
+# Generated: <%= Time.now.utc.to_s %>
+Gem::Specification.new do |s|
+  s.name = "<%= spec['name'] %>"
+  s.version = "<%= spec['version'] %>"
+  s.platform = Gem::Platform::RUBY
+  s.has_rdoc = true
+  s.extra_rdoc_files = [<% spec['extra_rdoc_files'].each do |f| %>"<%= f %>",<% end %>]
+  s.summary = "<%= spec['summary'] %>"
+  s.author = "<%= spec['author'] %>"
+  s.email = "<%= spec['email'] %>"
+  s.homepage = "<%= spec['homepage'] %>"
+  s.rubyforge_project = "<%= spec['rubyforge_project'] %>"
+  <% spec['add_dependency'].each do |gem, version| %>s.add_dependency("<%= gem %>", "<%= version %>")<% end %>
+  s.require_path = "<%= spec['require_path'] %>"
+  s.files = [<% spec['files'].each {|f| %>"<%= f %>",<% } %>]
+end

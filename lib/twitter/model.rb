@@ -328,4 +328,17 @@ module Twitter
         @created_at = Time.parse(@created_at) if @created_at.is_a?(String)
       end
   end # Message
+  
+  # RateLimitStatus provides information about how many requests you have left 
+  # and when you can resume more requests if your remaining_hits count is zero.
+  class RateLimitStatus
+    include ModelMixin
+    @@ATTRIBUTES = [:remaining_hits, :hourly_limit, :reset_time_in_seconds, :reset_time]
+    attr_accessor *@@ATTRIBUTES
+    
+    class << self
+      # Used as factory method callback
+      def attributes; @@ATTRIBUTES; end
+    end
+  end
 end # Twitter

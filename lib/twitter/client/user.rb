@@ -32,7 +32,6 @@ class Twitter::Client
   #  followers = client.my(:info).followers
   def user(id, action = :info, options = {})
     raise ArgumentError, "Invalid user action: #{action}" unless @@USER_URIS.keys.member?(action)
-    raise ArgumentError, "Unable to retrieve followers for user: #{id}" if action.eql?(:followers) and not id.eql?(@login)
     id = id.to_i if id.is_a?(Twitter::User)
     params = options.merge(:id => id)
     response = http_connect {|conn| create_http_get_request(@@USER_URIS[action], params) }

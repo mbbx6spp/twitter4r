@@ -1,22 +1,5 @@
 require File.join(File.dirname(__FILE__), '..', '..', 'spec_helper')
 
-describe Twitter::Client, "#user(id, :followers)" do
-  before(:each) do
-    @twitter = client_context    
-    @id = 395783
-  end
-  
-  it "should raise ArgumentError" do
-    lambda {
-      @twitter.user(@id, :followers)
-    }.should raise_error(ArgumentError)
-  end
-  
-  after(:each) do
-    nilize(@twitter, @id)
-  end
-end
-
 describe Twitter::Client, "#user(id, :info)" do
   before(:each) do
     @twitter = client_context

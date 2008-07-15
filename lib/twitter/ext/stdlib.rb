@@ -44,7 +44,7 @@ module Kernel
     begin
       present = gem(gem_name, version)
     rescue Gem::LoadError => le
-      warn("Gem load error: Couldn't load #{gem} with version requirement #{version}: #{le.to_s}")
+      warn("Gem load error: Couldn't load #{gem_name} with version requirement #{version}: #{le.to_s}")
     end
     present
   end

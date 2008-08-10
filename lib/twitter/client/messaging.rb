@@ -17,11 +17,10 @@ class Twitter::Client
   # is given.  Valid actions are:
   # * +:received+
   # * +:sent+
-  def messages(action, options = nil)
-    def uri_suffix(opts); opts && opts[:page] ? "?page=#{opts[:page]}" : ""; end
+  def messages(action, options = {})
     raise ArgumentError, "Invalid messaging action: #{action}" unless [:sent, :received].member?(action)
-    uri = @@MESSAGING_URIS[action] + uri_suffix(options)
-    response = http_connect {|conn|	create_http_get_request(uri) }
+    uri = @@MESSAGING_URIS[action]
+    response = http_connect {|conn|	create_http_get_request(uri, options) }
     bless_models(Twitter::Message.unmarshal(response.body))
   end
   

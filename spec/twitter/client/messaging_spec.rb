@@ -14,7 +14,7 @@ describe Twitter::Client, "#messages" do
   end
   
   it "should create expected HTTP GET request for :received case" do
-    @twitter.should_receive(:create_http_get_request).with(@uris[:received]).and_return(@request)
+    @twitter.should_receive(:create_http_get_request).with(@uris[:received], {}).and_return(@request)
     @twitter.messages(:received)
   end
   
@@ -24,7 +24,7 @@ describe Twitter::Client, "#messages" do
   end
   
   it "should create expected HTTP GET request for :sent case" do
-    @twitter.should_receive(:create_http_get_request).with(@uris[:sent]).and_return(@request)
+    @twitter.should_receive(:create_http_get_request).with(@uris[:sent], {}).and_return(@request)
     @twitter.messages(:sent)
   end
   
@@ -46,7 +46,7 @@ describe Twitter::Client, "#messages" do
   end
 
   it "should generate expected GET HTTP request for paging case" do
-    @twitter.should_receive(:create_http_get_request).with(@uris[:received] + "?page=#{@page}").and_return(@request)
+    @twitter.should_receive(:create_http_get_request).with(@uris[:received], {:page => @page}).and_return(@request)
     @twitter.messages(:received, :page => @page)
   end
 

@@ -29,7 +29,7 @@ class Twitter::Client
     raise ArgumentError, "Invalid friend action provided: #{action}" unless @@FRIENDSHIP_URIS.keys.member?(action)
     value = value.to_i unless value.is_a?(String)
     uri = "#{@@FRIENDSHIP_URIS[action]}/#{value}.json"
-    response = http_connect {|conn| create_http_get_request(uri) }
+    response = http_connect {|conn| create_http_post_request(uri) }
     bless_model(Twitter::User.unmarshal(response.body))
   end
 end

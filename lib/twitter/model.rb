@@ -260,6 +260,10 @@ module Twitter
       	client.status(:post, text)
       end
     end
+
+    def reply?
+      !!@in_reply_to_status_id
+    end
     
     protected
       # Constructor callback

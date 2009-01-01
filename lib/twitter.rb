@@ -1,4 +1,5 @@
 # 
+require('rubygems')
 
 module Twitter; end
 

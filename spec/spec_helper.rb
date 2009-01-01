@@ -9,7 +9,6 @@ end
 require_project_file('twitter')
 require_project_file('twitter/console')
 require_project_file('twitter/extras')
-require_project_file('twitter/rails')
 
 # Add helper methods here if relevant to multiple _spec.rb files
 

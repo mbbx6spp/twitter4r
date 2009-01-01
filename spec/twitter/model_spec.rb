@@ -433,9 +433,32 @@ describe Twitter::User, "#defriend" do
   end
 end
 
+describe Twitter::Status, "#reply?" do
+  before(:each) do
+    @status = Twitter::Status.new(
+      :id => 123456789,
+      :text => "Wazzup?", 
+      :user => mock(Twitter::User)
+    )
+    @reply = Twitter::Status.new(
+      :text => "No much bro.  You?",
+      :user => mock(Twitter::User),
+      :in_reply_to_status_id => @status.id
+    )
+  end
+
+  it "should return false for the original status" do
+    @status.reply?.should be(false)
+  end
+
+  it "should return true for the reply to the original status" do
+    @reply.reply?.should be(true)
+  end
+end
+
 describe Twitter::Status, "#to_s" do
   before(:each) do
-	  @text = 'Aloha'
+    @text = 'Aloha'
     @status = Twitter::Status.new(:text => @text)
   end
   

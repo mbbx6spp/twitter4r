@@ -99,7 +99,7 @@ module Twitter
   #  404
   #  Resource Not Found
   #  /i_am_crap.json
-  class RESTError < Exception
+  class RESTError < RuntimeError 
     include ClassUtilMixin
     @@ATTRIBUTES = [:code, :message, :uri]
     attr_accessor :code, :message, :uri

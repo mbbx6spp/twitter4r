@@ -7,11 +7,15 @@
 * {Susan Potter}[http://SusanPotter.NET] <me at susanpotter dot net>
 
 == Contributors
+Code:
 * Kaiichi Matsunaga <ma2 at lifemedia dot co dot jp> - proxy code suggestion
 * Sergio Santos <> - message paging code suggestion
 * Adam Stiles <adam at stilesoft dot com> - URI.encode => CGI.escape fix
 * Carl Crawley <cwcrawley at gmail dot com> - Friendship get => post fix
 * Christian Johansen <christian at cjohansen dot no> - in_reply_to attributes in Twitter::Status
+
+Design Suggestions:
+* Bosco So <rubymeetup at boscoso dot com> - making Twitter::Error a RuntimeError instead of an Exception to prevent irb from crashing out.
 
 == Description
 Twitter4R provides an object based API to query or update your Twitter account via pure Ruby.  It hides the ugly HTTP/REST code from your code.

@@ -17,7 +17,7 @@ namespace :spec do
     t.spec_opts = ['--format', 'html:doc/spec/index.html', '--color']
   #  t.out = 'doc/spec/index.html'
     t.rcov = true
-    t.rcov_opts = ['--html', '--exclude', "#{ENV['HOME']}/.autotest,spec"]
+    t.rcov_opts = ['--html', '--exclude', "#{ENV['HOME']}/.autotest,spec,/usr/lib/ruby"]
     t.rcov_dir = 'doc/rcov'
     t.fail_on_error = true
   end

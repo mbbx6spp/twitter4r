@@ -3,6 +3,9 @@
 Catalog(ue) of changes for Twitter4R 0.1.x releases including Retrospectiva ticket cross-reference numbers.  Refer to http://retro.tautology.net/projects/twitter4r/tickets for more information.
 
 == 0.3.1 Changes
+* Added Twitter4R shell
+* Improved code coverage for twitter/ext/stdlib code and removed hard coded extension in GET request path for retrieving account information
+* Changed Twitter::RESTError super class to be RuntimeError instead of Exception
 * Added URI.encode => CGI.escape fix
 * Added block methods
 * Added Twitter::Client#inspect method to XXXX out passwords

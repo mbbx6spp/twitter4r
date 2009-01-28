@@ -42,9 +42,10 @@ module Kernel
   def gem_present?(gem_name, version = nil)
     present = false
     begin
-      present = gem(gem_name, version)
+      present = !!(version ? gem(gem_name, version) : gem(gem_name))
     rescue Gem::LoadError => le
-      warn("Gem load error: Couldn't load #{gem_name} with version requirement #{version}: #{le.to_s}")
+      present = false
+      warn("Gem load error: Couldn't load #{gem_name} #{version ? "with version requirement #{version}: #{le.to_s}": ""}")
     end
     present
   end

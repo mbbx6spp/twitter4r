@@ -40,3 +40,20 @@ describe Time, "#to_s" do
     nilize(@time, @expected_string)
   end
 end
+
+# TODO: figure out how to stub the gem method to do what we want rather than this monstrousity.  It is dependent on the system installation, which is always a bad thing.  For now it will do so we can ship with 100% C0 coverage.
+describe Kernel, "#gem_present?" do
+  before(:each) do
+    @present_gem = "rake"
+    @uninstalled_gem = "uninstalled-gem-crap"
+  end
+  
+  it "should return true when a gem isn't present on system" do
+    gem_present?(@present_gem).should eql(true)
+  end
+  
+  it "should return false when a gem isn't present on system" do
+    gem_present?(@uninstalled_gem).should eql(false)
+  end
+end
+

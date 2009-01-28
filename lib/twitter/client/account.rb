@@ -16,7 +16,7 @@ class Twitter::Client
     connection = create_http_connection
     connection.start do |connection|
       response = http_connect do |conn|
-        create_http_get_request("#{@@ACCOUNT_URIS[type]}.json")
+        create_http_get_request(@@ACCOUNT_URIS[type])
       end
       bless_models(Twitter::RateLimitStatus.unmarshal(response.body))
     end

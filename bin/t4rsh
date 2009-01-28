@@ -1,0 +1,35 @@
+#!/usr/bin/env ruby
+
+require("irb")
+require("rubygems")
+
+begin
+  gem('twitter4r', '>0.3.0')
+  require("twitter")
+rescue Gem::LoadError
+  begin
+    gem("mbbx6spp-twitter4r", '>=0.3.1')
+    require("twitter")
+  rescue Gem::LoadError
+    abort("Error: You must install either twitter4r gem from Rubyforge with version 0.3.1 or greater or the mbbx6spp-twitter4r gem from GitHub's servers with version 0.3.1 or greater (and make sure it is a recent version of the gem).")
+  end
+end
+
+@twitter = nil
+default_config_file =
+File.join(File.expand_path(File.dirname(__FILE__)), "..", "config",
+"twitter.yml")
+default_env = ENV["T4R_ENV"] || ENV["MERB_ENV"] || ENV["RAILS_ENV"]
+
+if File.exists?(default_config_file) && default_env
+ @twitter = Twitter::Client.from_config(default_config_file, default_env)
+ puts "Used #{default_config_file} to create client for
+#{default_env} environment."
+ puts "Access @twitter for instantiated client."
+else
+  abort("Please make sure #{default_config_file} exists and contains your Twitter credentials (separated by environment) and that you specify the environment to use, e.g. if you have a 'test' section in your configuration file that you want to use set/export T4R_ENV=test as an environment variable or RAILS_ENV=test or MERB_ENV=test")
+end
+
+if __FILE__ == $0
+ IRB.start(__FILE__)
+end

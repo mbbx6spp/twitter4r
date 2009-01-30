@@ -1,4 +1,4 @@
-# Generated: Wed, 28 Jan 2009 23:00:29 -0000
+# Generated: Fri, 30 Jan 2009 05:49:41 -0000
 Gem::Specification.new do |s|
   s.name = "twitter4r"
   s.version = "0.3.1"

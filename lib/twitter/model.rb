@@ -158,7 +158,13 @@ module Twitter
   # Represents a <tt>Twitter</tt> user
   class User
     include ModelMixin
-    @@ATTRIBUTES = [:id, :name, :description, :location, :screen_name, :url, :profile_image_url, :protected]
+    @@ATTRIBUTES = [:id, :name, :description, :location, :screen_name, :url, 
+      :protected, :profile_image_url, :profile_background_color, 
+      :profile_text_color, :profile_link_color, :profile_sidebar_fill_color, 
+      :profile_sidebar_border_color, :profile_background_image_url, 
+      :profile_background_tile, :utc_offset, :time_zone, 
+      :following, :notifications, :favourites_count, :followers_count, 
+      :friends_count, :statuses_count, :created_at,  ]
     attr_accessor *@@ATTRIBUTES
 
     class << self
@@ -219,9 +225,8 @@ module Twitter
   # Represents a status posted to <tt>Twitter</tt> by a <tt>Twitter</tt> user.
   class Status
     include ModelMixin
-    @@ATTRIBUTES = [:id, :text, :created_at, :user, 
-                    :in_reply_to_status_id,
-                    :in_reply_to_user_id,
+    @@ATTRIBUTES = [:id, :text, :source, :truncated, :created_at, :user, 
+                    :favorited, :in_reply_to_status_id, :in_reply_to_user_id,
                     :in_reply_to_screen_name]
     attr_accessor *@@ATTRIBUTES
 

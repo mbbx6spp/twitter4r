@@ -28,6 +28,7 @@ class Twitter::Client
   def graph(action, value = nil)
     raise ArgumentError, "Invalid friend action provided: #{action}" unless @@GRAPH_URIS.keys.member?(action)
     id = value.to_i unless value.nil? || value.is_a?(String)
+    id ||= value
     id ||= @login
     uri = "#{@@GRAPH_URIS[action]}.json"
     response = http_connect {|conn| create_http_get_request(uri, :id => id) }

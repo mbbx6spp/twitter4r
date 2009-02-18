@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.homepage = "<%= spec['homepage'] %>"
   s.rubyforge_project = "<%= spec['rubyforge_project'] %>"
   <% spec['add_dependency'].each do |gem, version| %>s.add_dependency("<%= gem %>", "<%= version %>")<% end %>
-  s.require_path = "<%= spec['require_path'] %>"
+#  s.require_path = "<%= spec['require_path'] %>"
   s.files = [<% spec['files'].each {|f| %>"<%= f %>",<% } %>]
   s.bindir = 'bin'
   s.executables = ['t4rsh']

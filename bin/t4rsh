@@ -18,6 +18,52 @@ rescue Gem::LoadError
   end
 end
 
+module Twitter
+  class Console
+    class << self
+      @@OPTIONS = { :debugger => false, :config => "~/.twitter4r/accounts.yml" }
+      def parse_options
+        OptionParser.new do |opt|
+          opt.banner = "Usage: t4rsh [environment] [options]"
+          opt.on("--config=[~/.twitter4r/accounts.yml]", 'Use a specific config file.') { |v| @@OPTIONS[:config] = v }
+          opt.parse!(ARGV)
+        end
+      end
+
+      def config_file
+        result = ENV["T4R_CONFIG"]
+        file_name = File.expand_path('twitter.yml')
+        result ||= file_name if File.exists?(file_name)
+        file_name = File.expand_path('twitter.yml', 'config')
+        result ||= file_name if File.exists?(file_name)
+        file_name = File.expand_path('~/.twitter.yml')
+        result ||= file_name if File.exists?(file_name)
+        result
+      end
+
+      def account
+        ENV["T4R_ENV"] || ENV["MERB_ENV"] || ENV["RAILS_ENV"]
+      end
+
+      def run(file)
+        IRB.init_config(nil)
+        # configuration...
+        IRB.conf[:IRB_NAME] = "t4rsh"
+        IRB.conf[:VERSION] = Twitter::Version.to_version
+        IRB.conf[:USE_READLINE] = true
+        IRB.conf[:PROMPT_MODE] = :T4RSH
+        IRB.conf[:PROMPT][:T4RSH] = {
+          :PROMPT_I => "%N[%3n:%i]> ", # top level prompt
+          :PROMPT_C => "%N[%3n:%i]* ", # after conditional like "if"
+          :PROMPT_S => "%N[%3n:%i]* ", # during continuing string
+          :RETURN => "=> %s\n", # return value
+        }
+        IRB.start(file)
+      end
+    end
+  end
+end
+
 #if __FILE__ == $0
   @twitter = nil
   config_file = Twitter::Console.config_file

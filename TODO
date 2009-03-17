@@ -1,8 +1,6 @@
 
 0.3.1 TODO:
 * Add specs for :page, :lite and :since options support in Twitter::Client#my(...), Twitter::Client#user(....) and Twitter::User#followers calls
-* Add specs for Kernel#gem_present? extension
-* Add spec to test that warning is given to Rails 2.0+ users requiring 'twitter/rails'
 * Add specs for :replies support in Twitter::Client#status(...) and Twitter::Client#timeline_for(...)
 * Add RDoc for :replies support
 * Add better RDoc for Twitter::Client.account_info(:rate_limit_status)

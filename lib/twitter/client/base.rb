@@ -8,9 +8,9 @@ class Twitter::Client
     attr_accessor :login, :password
     
     # Returns the response of the HTTP connection.  
-    def http_connect(body = nil, require_auth = true, &block)
+    def http_connect(body = nil, require_auth = true, service = :rest, &block)
     	require_block(block_given?)
-    	connection = create_http_connection
+    	connection = create_http_connection(service)
     	connection.start do |connection|
     		request = yield connection if block_given?
     		request.basic_auth(@login, @password) if require_auth
@@ -45,11 +45,17 @@ class Twitter::Client
       end
     end
     
-    def create_http_connection
-      conn = Net::HTTP.new(@@config.host, @@config.port, 
+    def create_http_connection(service = :rest)
+      case service
+      when :rest
+        protocol, host, port = @@config.protocol, @@config.host, @@config.port
+      when :search
+        protocol, host, port = @@config.search_protocol, @@config.search_host, @@config.search_port
+      end
+      conn = Net::HTTP.new(host, port, 
                             @@config.proxy_host, @@config.proxy_port,
                             @@config.proxy_user, @@config.proxy_pass)
-      if @@config.protocol == :ssl
+      if protocol == :ssl
         conn.use_ssl = true
         conn.verify_mode = OpenSSL::SSL::VERIFY_NONE
       end

@@ -3,6 +3,7 @@ class Twitter::Client
   	:get => '/statuses/show.json',
   	:post => '/statuses/update.json',
   	:delete => '/statuses/destroy.json',
+  	:reply => '/statuses/update.json',
   }
   
   # Provides access to individual statuses via Twitter's Status APIs
@@ -11,6 +12,7 @@ class Twitter::Client
   # * <tt>:get</tt> to retrieve status content.  Assumes <tt>value</tt> given responds to :to_i message in meaningful way to yield intended status id.
   # * <tt>:post</tt> to publish a new status
   # * <tt>:delete</tt> to remove an existing status.  Assumes <tt>value</tt> given responds to :to_i message in meaningful way to yield intended status id.
+  # * <tt>:reply</tt> to reply to an existing status.  Assumes <tt>value</tt> given is <tt>Hash</tt> which contains <tt>:in_reply_to_status_id</tt> and <tt>:status</tt>
   # 
   # <tt>value</tt> should be set to:
   # * the status identifier for <tt>:get</tt> case
@@ -40,6 +42,8 @@ class Twitter::Client
     	response = http_connect({:status => value, :source => @@config.source}.to_http_str) {|conn| create_http_post_request(uri) }
     when :delete
     	response = http_connect {|conn| create_http_delete_request(uri, :id => value.to_i) }
+    when :reply
+      response = http_connect(value.merge(:source => @@config.source).to_http_str) {|conn| create_http_post_request(uri) }
     end
     bless_model(Twitter::Status.unmarshal(response.body))
   end

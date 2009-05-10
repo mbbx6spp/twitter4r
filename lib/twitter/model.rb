@@ -272,6 +272,10 @@ module Twitter
     def reply?
       !!@in_reply_to_status_id
     end
+
+    def reply(status)
+      client.status(:reply, :status => status, :in_reply_to_status_id => @id)
+    end
     
     protected
       # Constructor callback

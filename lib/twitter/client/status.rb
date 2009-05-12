@@ -33,8 +33,8 @@ class Twitter::Client
     return self.timeline_for(action, value || {}) if :replies == action
     raise ArgumentError, "Invalid status action: #{action}" unless @@STATUS_URIS.keys.member?(action)
     return nil unless value
-  	uri = @@STATUS_URIS[action]
-  	response = nil
+    uri = @@STATUS_URIS[action]
+    response = nil
     case action
     when :get
     	response = http_connect {|conn|	create_http_get_request(uri, :id => value.to_i) }
@@ -43,6 +43,7 @@ class Twitter::Client
     when :delete
     	response = http_connect {|conn| create_http_delete_request(uri, :id => value.to_i) }
     when :reply
+      return nil if (!value.is_a?(Hash) || !value[:status] || !value[:in_reply_to_status_id])
       response = http_connect(value.merge(:source => @@config.source).to_http_str) {|conn| create_http_post_request(uri) }
     end
     bless_model(Twitter::Status.unmarshal(response.body))

@@ -456,6 +456,27 @@ describe Twitter::Status, "#reply?" do
   end
 end
 
+describe Twitter::Status, "#reply(status_text)" do
+  before(:each) do
+    @twitter = client_context
+    @status = Twitter::Status.new(
+        :id => 1234,
+        :text => "The status text",
+        :client => @twitter)
+    @reply_text = "Reply text goes here"
+    @reply_status = Twitter::Status.new()
+  end
+
+  it "should invoke #status(:reply, :status => ..., :in_reply_to_status_id => ...) on client context" do
+    @twitter.should_receive(:status).with(:reply, :status => @reply_text, :in_reply_to_status_id => @status.id).and_return(@reply_status)
+    @status.reply(@reply_text)
+  end
+
+  after(:each) do
+    nilize(@twitter, @status)
+  end 
+end
+
 describe Twitter::Status, "#to_s" do
   before(:each) do
     @text = 'Aloha'

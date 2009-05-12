@@ -11,6 +11,7 @@ describe Twitter::Client, "#status" do
     @connection = mas_net_http(@response)
     @float = 43.3434
     @status = Twitter::Status.new(:id => 2349343)
+    @reply_to_status_id = 3495293
     @source = Twitter::Client.class_eval("@@defaults[:source]")
   end
 
@@ -53,6 +54,32 @@ describe Twitter::Client, "#status" do
     @twitter.should_receive(:create_http_post_request).with(@uris[:post]).and_return(@request)
     @connection.should_receive(:request).with(@request, {:status => @message, :source => @source}.to_http_str).and_return(@response)
     @twitter.status(:post, @message)
+  end
+  
+  it "should return nil if no :status key-value given in the value argument for :reply case" do
+    status = @twitter.status(:reply, {})
+    status.should be_nil
+  end
+  
+  it "should return nil if nil is passed as value argument for :reply case" do
+    status = @twitter.status(:reply, nil)
+    status.should be_nil
+  end
+  
+  it "should not call @twitter#http_connect when passing a value Hash argument that has no :status key-value in :reply case" do
+    @twitter.should_not_receive(:http_connect)
+    @twitter.status(:reply, {})
+  end
+  
+  it "should not call @twitter#http_connect when passing nil for value argument in :reply case" do
+    @twitter.should_not_receive(:http_connect)
+    @twitter.status(:reply, nil)
+  end
+  
+  it "should create expected HTTP POST request for :reply case" do
+    @twitter.should_receive(:create_http_post_request).with(@uris[:reply]).and_return(@request)
+    @connection.should_receive(:request).with(@request, {:status => @message, :source => @source, :in_reply_to_status_id => @reply_to_status_id}.to_http_str).and_return(@response)
+    @twitter.status(:reply, :status => @message, :in_reply_to_status_id => @reply_to_status_id)
   end
   
   it "should return nil if nil is passed as value argument for :delete case" do

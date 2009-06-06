@@ -1,9 +1,11 @@
 class Twitter::Client
   alias :old_inspect :inspect
+
   def inspect
     s = old_inspect
     s.gsub!(/@password=".*?"/, '@password="XXXX"')
   end
+
   protected
     attr_accessor :login, :password
     
@@ -34,8 +36,10 @@ class Twitter::Client
     @@http_header = nil
     
     def raise_rest_error(response, uri = nil)
+      map = JSON.parse(response.body)
       raise Twitter::RESTError.new(:code => response.code, 
                                    :message => response.message,
+                                   :error => map["error"],
                                    :uri => uri)        
     end
     
@@ -90,4 +94,3 @@ class Twitter::Client
     	Net::HTTP::Delete.new(path, http_header)
     end
 end
-

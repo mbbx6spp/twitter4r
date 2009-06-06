@@ -101,8 +101,8 @@ module Twitter
   #  /i_am_crap.json
   class RESTError < RuntimeError 
     include ClassUtilMixin
-    @@ATTRIBUTES = [:code, :message, :uri]
-    attr_accessor :code, :message, :uri
+    @@ATTRIBUTES = [:code, :message, :uri, :error]
+    attr_accessor :code, :message, :uri, :error
     
     # Returns string in following format:
     #  "HTTP #{@code}: #{@message} at #{@uri}"

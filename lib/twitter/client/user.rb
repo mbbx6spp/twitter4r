@@ -1,6 +1,6 @@
 class Twitter::Client
   @@USER_URIS = {
-  	:info => '/users/show',
+  	:info => '/users/show.json',
   	:friends => '/statuses/friends.json',
   	:followers => '/statuses/followers.json',
   }

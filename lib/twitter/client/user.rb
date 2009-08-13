@@ -33,7 +33,8 @@ class Twitter::Client
   def user(id, action = :info, options = {})
     raise ArgumentError, "Invalid user action: #{action}" unless @@USER_URIS.keys.member?(action)
     id = id.to_i if id.is_a?(Twitter::User)
-    params = options.merge(:id => id)
+    id_param = id.is_a?(String) ? :screen_name : :user_id
+    params = options.merge(id_param => id)
     response = http_connect {|conn| create_http_get_request(@@USER_URIS[action], params) }
     bless_models(Twitter::User.unmarshal(response.body))
   end

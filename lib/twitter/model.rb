@@ -311,7 +311,7 @@ module Twitter
       # For example:
       #  status = Twitter::Message.create(
       #    :text => 'I am shopping for flip flops',
-      #    :receipient => 'anotherlogin',
+      #    :recipient => 'anotherlogin',
       #    :client => client)
       # 
       # An <tt>ArgumentError</tt> will be raised if no valid client context

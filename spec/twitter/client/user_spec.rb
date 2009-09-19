@@ -21,12 +21,12 @@ describe Twitter::Client, "#user(id, :info)" do
   end
   
   it "should create expected HTTP GET request when giving numeric user id" do
-    @twitter.should_receive(:create_http_get_request).with(@uris[:info], {:id => @id}).and_return(@request)
+    @twitter.should_receive(:create_http_get_request).with(@uris[:info], {:user_id => @id}).and_return(@request)
     @twitter.user(@id)
   end
     
   it "should create expected HTTP GET request when giving screen name" do
-    @twitter.should_receive(:create_http_get_request).with(@uris[:info], {:id => @screen_name}).and_return(@request)
+    @twitter.should_receive(:create_http_get_request).with(@uris[:info], {:screen_name => @screen_name}).and_return(@request)
     @twitter.user(@screen_name)
   end
   
@@ -68,7 +68,7 @@ describe Twitter::Client, "#user(id, :friends)" do
   end
   
   it "should create expected HTTP GET request when giving numeric user id" do
-    @twitter.should_receive(:create_http_get_request).with(@uris[:friends], {:id => @id}).and_return(@request)
+    @twitter.should_receive(:create_http_get_request).with(@uris[:friends], {:user_id => @id}).and_return(@request)
     @twitter.user(@id, :friends)
   end
   
@@ -78,12 +78,12 @@ describe Twitter::Client, "#user(id, :friends)" do
   end
   
   it "should create expected HTTP GET request when giving Twitter::User object" do
-    @twitter.should_receive(:create_http_get_request).with(@uris[:friends], {:id => @user.to_i}).and_return(@request)
+    @twitter.should_receive(:create_http_get_request).with(@uris[:friends], {:user_id => @user.to_i}).and_return(@request)
     @twitter.user(@user, :friends)
   end
   
   it "should create expected HTTP GET request when giving screen name" do
-    @twitter.should_receive(:create_http_get_request).with(@uris[:friends], {:id => @screen_name}).and_return(@request)
+    @twitter.should_receive(:create_http_get_request).with(@uris[:friends], {:screen_name => @screen_name}).and_return(@request)
     @twitter.user(@screen_name, :friends)
   end
   

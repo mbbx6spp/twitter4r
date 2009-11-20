@@ -6,6 +6,7 @@ class Twitter::Client
     :user => '/statuses/user_timeline.json',
     :me => '/statuses/user_timeline.json',
     :replies => '/statuses/replies.json',
+    :mentions => '/statuses/mentions.json'
   }
 
   # Provides access to Twitter's Timeline APIs

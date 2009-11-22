@@ -164,7 +164,7 @@ module Twitter
       :profile_sidebar_border_color, :profile_background_image_url, 
       :profile_background_tile, :utc_offset, :time_zone, 
       :following, :notifications, :favourites_count, :followers_count, 
-      :friends_count, :statuses_count, :created_at,  ]
+      :friends_count, :statuses_count, :created_at ]
     attr_accessor *@@ATTRIBUTES
 
     class << self
@@ -227,7 +227,7 @@ module Twitter
     include ModelMixin
     @@ATTRIBUTES = [:id, :text, :source, :truncated, :created_at, :user, :from_user, :to_user,
                     :favorited, :in_reply_to_status_id, :in_reply_to_user_id,
-                    :in_reply_to_screen_name]
+                    :in_reply_to_screen_name, :geo]
     attr_accessor *@@ATTRIBUTES
 
     class << self

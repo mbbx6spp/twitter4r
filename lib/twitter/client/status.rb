@@ -3,7 +3,7 @@ class Twitter::Client
   	:get => '/statuses/show.json',
   	:post => '/statuses/update.json',
   	:delete => '/statuses/destroy.json',
-  	:reply => '/statuses/update.json',
+  	:reply => '/statuses/update.json'
   }
   
   # Provides access to individual statuses via Twitter's Status APIs
